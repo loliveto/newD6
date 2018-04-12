@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "115442908794",
+    "firebase_url": "https://react-c1f78.firebaseio.com",
+    "project_id": "react-c1f78",
+    "storage_bucket": "react-c1f78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115442908794:android:b61ddb277a06f862",
+        "android_client_info": {
+          "package_name": "com.example.john.quizsurvey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115442908794-kh5k3blblpbq07iacvki7ng16c3ef36o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.john.quizsurvey",
+            "certificate_hash": "221bc8da034e46f649105d2ed45f6d8268503e87"
+          }
+        },
+        {
+          "client_id": "115442908794-5u6ihuu9ict3pado6b39ltmrk483ldm5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClFykyNGMq0KIKnsmCyhBc-oH99g6hXTo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115442908794-5u6ihuu9ict3pado6b39ltmrk483ldm5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
