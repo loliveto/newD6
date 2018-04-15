@@ -10,6 +10,7 @@ public class Questionare {
     public String name;
     ArrayList<Question> questions;
     String firebase_id = "";
+
     public Questionare()
     {
         name = "";
