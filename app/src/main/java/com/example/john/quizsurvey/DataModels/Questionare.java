@@ -10,7 +10,7 @@ public class Questionare {
     public String name;
     ArrayList<Question> questions;
     String firebase_id = "";
-    Answersheet asheet = new Answersheet();
+    public Answersheet asheet = new Answersheet();
     boolean isATest;
 
     public Questionare()
@@ -31,6 +31,14 @@ public class Questionare {
             prompts.add(question.prompt);
         }
         return prompts;
+    }
+
+    public ArrayList<String> getAnswers(){
+        ArrayList<String> answers = new ArrayList<>();
+        for (String a : asheet.correctAnswers){
+            answers.add(a);
+        }
+        return answers;
     }
 
     public void addQuestion(Question q)

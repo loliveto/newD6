@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.Views.CreateTFQuestion;
+import com.example.john.quizsurvey.Views.EditQuestion;
 import com.example.john.quizsurvey.Views.Menu;
 import com.example.john.quizsurvey.Views.ViewAllQuestionares;
 import com.example.john.quizsurvey.Views.EditQuestionare;
@@ -65,6 +66,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         ViewAllQuestionares ql = ViewAllQuestionares.newInstance();
         transaction.replace(R.id.main_activity,ql);
+        transaction.commit();
+    }
+
+    public void toViewQuestion(){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        EditQuestion q = EditQuestion.newInstance();
+        transaction.replace(R.id.main_activity,q);
         transaction.commit();
     }
 }
