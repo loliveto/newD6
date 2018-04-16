@@ -10,6 +10,8 @@ public class Questionare {
     public String name;
     ArrayList<Question> questions;
     String firebase_id = "";
+    Answersheet asheet = new Answersheet();
+    boolean isATest;
 
     public Questionare()
     {
@@ -18,6 +20,9 @@ public class Questionare {
         firebase_id = "";
     }
 
+    public void setIsATest(boolean isATest){
+        this.isATest = isATest;
+    }
 
     public ArrayList<String> getQuestionPrompt() {
         ArrayList<String> prompts = new ArrayList<>();

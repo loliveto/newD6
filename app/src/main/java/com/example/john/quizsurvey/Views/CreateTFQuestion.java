@@ -23,7 +23,6 @@ public class CreateTFQuestion extends Fragment {
         // Required empty public constructor
     }
 
-
     public static CreateTFQuestion newInstance(Questionare q) {
         CreateTFQuestion fragment = new CreateTFQuestion();
         fragment.questionare = q;
