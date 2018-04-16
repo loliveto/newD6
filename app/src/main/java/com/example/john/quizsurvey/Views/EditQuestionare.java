@@ -77,6 +77,14 @@ public class EditQuestionare extends Fragment {
                 ((MainActivity)getActivity()).toMenu();
             }
         });
+        Button home = view.findViewById(R.id.go_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toMenu();
+            }
+        });
+
         ArrayList<String> prompts = questionare.getQuestionPrompt();
         ListView listView = view.findViewById(R.id.question_list);
         ArrayAdapter adapter = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,prompts);

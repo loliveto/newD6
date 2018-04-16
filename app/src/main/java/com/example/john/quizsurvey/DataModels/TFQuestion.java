@@ -8,4 +8,10 @@ public class TFQuestion extends Question {
         prompt = p;
         type = "TF";
     }
+
+    @Override
+    public void setOption(){
+        options.add("True");
+        options.add("False");
+    }
 }

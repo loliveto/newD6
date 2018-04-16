@@ -17,7 +17,7 @@
 
             <EditText
                 android:id="@+id/questionare_title"
-                android:layout_width="match_parent"
+                android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Name"
@@ -33,7 +33,7 @@
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="match_parent">
 
             <Button
@@ -41,10 +41,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Create new question" />
+
+            <Button
+                android:id="@+id/go_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home" />
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
+            android:layout_width="196dp"
             android:layout_height="match_parent">
 
             <ListView
