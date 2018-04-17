@@ -7,6 +7,7 @@ public class TFQuestion extends Question {
     {
         prompt = p;
         type = "TF";
+        setOption();
     }
 
     @Override

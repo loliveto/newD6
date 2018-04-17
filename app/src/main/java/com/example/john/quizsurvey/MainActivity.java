@@ -69,11 +69,13 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void toViewQuestion(){
+    public void toViewQuestion(Questionare q, int index){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        EditQuestion q = EditQuestion.newInstance();
-        transaction.replace(R.id.main_activity,q);
+        EditQuestion q1 = EditQuestion.newInstance(q, index);
+        transaction.replace(R.id.main_activity,q1);
         transaction.commit();
     }
+
+
 }

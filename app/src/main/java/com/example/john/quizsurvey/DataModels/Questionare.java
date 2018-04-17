@@ -46,6 +46,10 @@ public class Questionare {
         questions.add(q);
     }
 
+    public Question getQuestion(int index){
+        return questions.get(index);
+    }
+
     public void save()
     {
         if (firebase_id.equals("")) {

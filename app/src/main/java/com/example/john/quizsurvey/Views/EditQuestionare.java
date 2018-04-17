@@ -93,10 +93,11 @@ public class EditQuestionare extends Fragment {
         ArrayAdapter adapter = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,prompts);
         listView.setAdapter(adapter);
 
+        //check to see waht kind of question it is first
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ((MainActivity)getActivity()).toViewQuestion();
+                ((MainActivity)getActivity()).toViewQuestion(questionare, position);
             }
         });
 

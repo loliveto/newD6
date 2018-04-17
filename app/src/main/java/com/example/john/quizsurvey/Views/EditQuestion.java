@@ -21,21 +21,17 @@ import java.util.ArrayList;
 
 public class EditQuestion extends Fragment{
     private Question q;
+    private Questionare qu;
+    private int index;
 
     public EditQuestion() {
         // Required empty public constructor
     }
 
-    public static EditQuestion newInstance(Question q) {
+    public static EditQuestion newInstance(Questionare qu, int index) {
         EditQuestion fragment = new EditQuestion();
-        fragment.q = q;
-        return fragment;
-    }
-
-    public static EditQuestion newInstance() {
-        EditQuestion fragment = new EditQuestion();
-        Question q = new Question();
-        fragment.q = q;
+        fragment.qu = qu;
+        fragment.index = index;
         return fragment;
     }
 
@@ -50,6 +46,8 @@ public class EditQuestion extends Fragment{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_view_ans, container, false);
         final EditText titleText = view.findViewById(R.id.questionprompt);
+        q = qu.getQuestion(index);
+
         titleText.setText(q.prompt);
         Button save = view.findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
