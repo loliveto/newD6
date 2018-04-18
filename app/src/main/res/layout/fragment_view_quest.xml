@@ -49,12 +49,32 @@
                 android:text="Home" />
         </TableRow>
 
+        <TableRow>
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Questions" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answers" />
+        </TableRow>
+
         <TableRow
             android:layout_width="196dp"
             android:layout_height="match_parent">
 
             <ListView
                 android:id="@+id/question_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ListView
+                android:id="@+id/viewanswers"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </TableRow>
