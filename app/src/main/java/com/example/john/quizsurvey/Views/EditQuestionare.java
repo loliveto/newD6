@@ -100,10 +100,10 @@ public class EditQuestionare extends Fragment {
             }
         });
 
-//        ArrayList<String> ans = questionare.asheet.getCorrectAnswers();
-//        ListView listView1 = view.findViewById(R.id.viewanswers);
-//        ArrayAdapter adapter1 = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,ans);
-//        listView.setAdapter(adapter1);
+        ArrayList<String> ans = questionare.asheet.getCorrectAnswers();
+        ListView listView1 = view.findViewById(R.id.viewanswers);
+        ArrayAdapter adapter1 = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,ans);
+        listView1.setAdapter(adapter1);
 
         return view;
     }
