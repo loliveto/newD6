@@ -55,6 +55,7 @@ public class EditQuestion extends Fragment{
             public void onClick(View v) {
                 q.prompt = titleText.getText().toString();
                 q.save();//to do
+                qu.asheet.save();
                 ((MainActivity)getActivity()).toSeeQuestionare(qu);
             }
         });
