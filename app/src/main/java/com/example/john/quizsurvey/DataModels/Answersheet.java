@@ -17,7 +17,7 @@ public class Answersheet {
 
     //add correct answers for the test
     public void addCorrectAnswer(String answer) {
-        correctAnswers.add(answer);
+        this.correctAnswers.add(answer);
     }
 
     //add user users for the questionaire

@@ -92,7 +92,6 @@ public class EditQuestionare extends Fragment {
         ListView listView = view.findViewById(R.id.question_list);
         ArrayAdapter adapter = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,prompts);
         listView.setAdapter(adapter);
-
         //check to see waht kind of question it is first
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -100,6 +99,11 @@ public class EditQuestionare extends Fragment {
                 ((MainActivity)getActivity()).toViewQuestion(questionare, position);
             }
         });
+
+//        ArrayList<String> ans = questionare.asheet.getCorrectAnswers();
+//        ListView listView1 = view.findViewById(R.id.viewanswers);
+//        ArrayAdapter adapter1 = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,ans);
+//        listView.setAdapter(adapter1);
 
         return view;
     }
