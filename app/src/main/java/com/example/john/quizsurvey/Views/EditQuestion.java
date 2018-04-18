@@ -55,7 +55,7 @@ public class EditQuestion extends Fragment{
             public void onClick(View v) {
                 q.prompt = titleText.getText().toString();
                 q.save();//to do
-                ((MainActivity)getActivity()).toSeeQuestionare();
+                ((MainActivity)getActivity()).toSeeQuestionare(qu);
             }
         });
         Button home = view.findViewById(R.id.go_home);

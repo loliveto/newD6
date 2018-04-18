@@ -68,7 +68,7 @@ public class EditQuestionare extends Fragment {
             @Override
             public void onClick(View v) {
                 questionare.name = titleText.getText().toString();
-                ((MainActivity)getActivity()).toCreateTF(questionare);
+                ((MainActivity)getActivity()).toSelectQType(questionare);
             }
         });
         Button save = view.findViewById(R.id.save);
@@ -77,7 +77,7 @@ public class EditQuestionare extends Fragment {
             public void onClick(View v) {
                 questionare.name = titleText.getText().toString();
                 questionare.save();
-                ((MainActivity)getActivity()).toMenu();
+                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
             }
         });
         Button home = view.findViewById(R.id.go_home);

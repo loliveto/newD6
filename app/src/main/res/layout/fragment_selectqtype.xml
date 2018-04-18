@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/mcbutton"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:text="Multiple Choice"
+                tools:layout_editor_absoluteX="148dp"
+                tools:layout_editor_absoluteY="16dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/tfbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="True/False" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/matchbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matching" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/rankbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ranking" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/shortansbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Short Answer" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/longansbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Essay Question" />
+        </TableRow>
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>

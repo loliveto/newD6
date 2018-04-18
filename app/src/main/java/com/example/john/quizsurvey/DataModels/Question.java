@@ -23,20 +23,25 @@ public class Question {
 
     public void save()
     {
-        if (firebase_id.equals("")) {
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            //This questionare is new, so create a new space in firebase for questionare
-            DatabaseReference myRef = database.getReference("questionares").push();
-            //Save the key to use later if we need to edit
-            firebase_id = myRef.getKey();
-            //Save this object at the location firebase returned
-            myRef.setValue(this);
-        }else {
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            //This questionare has been saved before, and this is an edit, so overwrite the current data on it in firebase
-            DatabaseReference myRef = database.getReference("questionares/"+firebase_id);
-            //Save this object at its proper location
-            myRef.setValue(this);
-        }
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //This questionare has been saved before, and this is an edit, so overwrite the current data on it in firebase
+        DatabaseReference myRef = database.getReference("questionares/"+firebase_id+"/questions");
+        //Save this object at its proper location
+        myRef.setValue(this);
+//        if (firebase_id.equals("")) {
+//            FirebaseDatabase database = FirebaseDatabase.getInstance();
+//            //This questionare is new, so create a new space in firebase for questionare
+//            DatabaseReference myRef = database.getReference("questionares").push();
+//            //Save the key to use later if we need to edit
+//            firebase_id = myRef.getKey();
+//            //Save this object at the location firebase returned
+//            myRef.setValue(this);
+//        }else {
+//            FirebaseDatabase database = FirebaseDatabase.getInstance();
+//            //This questionare has been saved before, and this is an edit, so overwrite the current data on it in firebase
+//            DatabaseReference myRef = database.getReference("questionares/"+firebase_id);
+//            //Save this object at its proper location
+//            myRef.setValue(this);
+//        }
     }
 }

@@ -10,6 +10,7 @@ import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.Views.CreateTFQuestion;
 import com.example.john.quizsurvey.Views.EditQuestion;
 import com.example.john.quizsurvey.Views.Menu;
+import com.example.john.quizsurvey.Views.QTypeSelect;
 import com.example.john.quizsurvey.Views.ViewAllQuestionares;
 import com.example.john.quizsurvey.Views.EditQuestionare;
 
@@ -77,5 +78,11 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-
+    public void toSelectQType(Questionare q){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        QTypeSelect q1 = QTypeSelect.newInstance(q);
+        transaction.replace(R.id.main_activity,q1);
+        transaction.commit();
+    }
 }
