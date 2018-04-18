@@ -10,20 +10,23 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Prompt"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
-        android:layout_width="164dp"
+        android:id="@+id/radioGroup"
+        android:layout_width="57dp"
         android:layout_height="360dp"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="88dp">
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="55dp">
 
         <RadioButton
             android:id="@+id/mcOption1"
@@ -32,36 +35,112 @@
             android:layout_weight="1" />
 
         <RadioButton
+            android:id="@+id/mcOption2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="RadioButton" />
+            android:layout_weight="1" />
 
         <RadioButton
+            android:id="@+id/mcOption3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:visibility="invisible" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/mcOption4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:visibility="invisible" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/mcOption5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:visibility="invisible" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/mcOption6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:visibility="invisible" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/mcText1"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Option 1"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="135dp" />
+
+    <EditText
+        android:id="@+id/mcText2"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:hint="Option 2"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/mcText1"
+        tools:layout_editor_absoluteX="112dp" />
+
+    <EditText
+        android:id="@+id/mcText3"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Option 3"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/mcText2"
+        tools:layout_editor_absoluteX="112dp" />
+
+    <EditText
+        android:id="@+id/mcText4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Option 4"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/mcText3"
+        tools:layout_editor_absoluteX="112dp" />
+
+    <EditText
+        android:id="@+id/mcText5"
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:hint="Option 5"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/mcText4"
+        tools:layout_editor_absoluteX="112dp" />
+
+    <EditText
+        android:id="@+id/mcText6"
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:ems="10"
+        android:hint="Option 6"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/mcText5"
+        tools:layout_editor_absoluteX="112dp" />
+
+    <Button
+        android:id="@+id/addOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Add Option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="69dp" />
 </android.support.constraint.ConstraintLayout>
