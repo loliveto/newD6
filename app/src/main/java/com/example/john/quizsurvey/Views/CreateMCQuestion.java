@@ -66,15 +66,35 @@ public class CreateMCQuestion extends Fragment {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.TrueButton:
+            case R.id.mcOption1:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("True");
+                    questionare.asheet.addCorrectAnswer("True"); //get option 1 text
                 break;
-            case R.id.FalseButton:
+            case R.id.mcOption2:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("False");
+                    questionare.asheet.addCorrectAnswer("False"); //get option 2 text
+                break;
+            case R.id.mcOption3:
+                if (checked)
+                    questionare.asheet.addCorrectAnswer("False"); //get option 3 text
+                break;
+            case R.id.mcOption4:
+                if (checked)
+                    questionare.asheet.addCorrectAnswer("False"); //get option 4 text
+                break;
+            case R.id.mcOption5:
+                if (checked)
+                    questionare.asheet.addCorrectAnswer("False"); //get option 5 text
+                break;
+            case R.id.mcOption6:
+                if (checked)
+                    questionare.asheet.addCorrectAnswer("False"); //get option 6 text
                 break;
         }
+    }
+
+    public void onButtonClicked(View view){
+        
     }
 
 }
