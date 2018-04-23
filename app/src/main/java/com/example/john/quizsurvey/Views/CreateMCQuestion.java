@@ -63,38 +63,92 @@ public class CreateMCQuestion extends Fragment {
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
+        final EditText mcText1 = view.findViewById(R.id.mcText1);
+        final EditText mcText2 = view.findViewById(R.id.mcText2);
+        final EditText mcText3 = view.findViewById(R.id.mcText3);
+        final EditText mcText4 = view.findViewById(R.id.mcText4);
+        final EditText mcText5 = view.findViewById(R.id.mcText5);
+        final EditText mcText6 = view.findViewById(R.id.mcText6);
+
 
         // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.mcOption1:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("True"); //get option 1 text
+                    questionare.asheet.addCorrectAnswer(mcText1.getText().toString()); //get option 1 text
                 break;
             case R.id.mcOption2:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("False"); //get option 2 text
+                    questionare.asheet.addCorrectAnswer(mcText2.getText().toString()); //get option 2 text
                 break;
             case R.id.mcOption3:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("False"); //get option 3 text
+                    questionare.asheet.addCorrectAnswer(mcText3.getText().toString()); //get option 3 text
                 break;
             case R.id.mcOption4:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("False"); //get option 4 text
+                    questionare.asheet.addCorrectAnswer(mcText4.getText().toString()); //get option 4 text
                 break;
             case R.id.mcOption5:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("False"); //get option 5 text
+                    questionare.asheet.addCorrectAnswer(mcText5.getText().toString()); //get option 5 text
                 break;
             case R.id.mcOption6:
                 if (checked)
-                    questionare.asheet.addCorrectAnswer("False"); //get option 6 text
+                    questionare.asheet.addCorrectAnswer(mcText6.getText().toString()); //get option 6 text
                 break;
         }
     }
 
     public void onButtonClicked(View view){
-        
-    }
+
+        //onButtonClicked(View view);
+        /*
+        donebutton = (Button) findViewById(R.id.done);
+    donebutton.setOnClickListener(this);
+    donebutton.setVisibility(View.INVISIBLE);
+
+    @Override
+     public void onClick(View v) {
+    // TODO Auto-generated method stub
+         if(v.equals(remove))
+           {
+             donebutton.setVisibility(View.VISIBLE);
+           }
+        if(v.equals(donebutton))
+            {
+                Intent i=new Intent(One.this,Second.class);
+                startActivity(i);
+                finish();
+                donebutton.setVisibility(View.INVISIBLE);
+            }
+
+      }
+         */
+        Button option = (Button) findViewById(R.id.addOption);
+        final int count = 2;
+        option.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if(count == 2){
+                    final EditText mcText3 = view.findViewById(R.id.mcText3);
+                    mcText3.setVisibility(View.VISIBLE);
+                    count=3;
+                }
+                else if(count == 3){
+                    final EditText mcText4 = view.findViewById(R.id.mcText4);
+                    mcText4.setVisibility(View.VISIBLE);
+                    count=4;
+                }
+                else if(count == 4){
+                    final EditText mcText5 = view.findViewById(R.id.mcText5);
+                    mcText5.setVisibility(View.VISIBLE);
+                    count=5;
+                }
+                else if(count == 5){
+                    final EditText mcText6 = view.findViewById(R.id.mcText6);
+                    mcText6.setVisibility(View.VISIBLE);
+                    count=6;
+                }
+            }
 
 }
