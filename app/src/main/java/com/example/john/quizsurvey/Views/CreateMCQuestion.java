@@ -61,6 +61,7 @@ public class CreateMCQuestion extends Fragment{
         });
 
         final Button option = (Button) view.findViewById(R.id.addOption);
+        final Button removeOpt = view.findViewById(R.id.removeOption);
         final Button mcOption3 = view.findViewById(R.id.mcOption3);
         final Button mcOption4 = view.findViewById(R.id.mcOption4);
         final Button mcOption5 = view.findViewById(R.id.mcOption5);
@@ -76,6 +77,7 @@ public class CreateMCQuestion extends Fragment{
                 if(count==2){
                     mcOption3.setVisibility(View.VISIBLE);
                     mcText3.setVisibility(View.VISIBLE);
+                    removeOpt.setVisibility(View.VISIBLE);
                     count=3;
                 }
                 else if(count==3){
@@ -93,6 +95,33 @@ public class CreateMCQuestion extends Fragment{
                     mcText6.setVisibility(View.VISIBLE);
                     option.setVisibility(View.INVISIBLE);
                     count=6;
+                }
+            }
+        });
+        removeOpt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(count==3){
+                    mcOption3.setVisibility(View.INVISIBLE);
+                    mcText3.setVisibility(View.INVISIBLE);
+                    removeOpt.setVisibility(View.INVISIBLE);
+                    count=2;
+                }
+                else if(count==4){
+                    mcOption4.setVisibility(View.INVISIBLE);
+                    mcText4.setVisibility(View.INVISIBLE);
+                    count=3;
+                }
+                else if(count==5){
+                    mcOption5.setVisibility(View.INVISIBLE);
+                    mcText5.setVisibility(View.INVISIBLE);
+                    count=4;
+                }
+                else if(count==6){
+                    mcOption6.setVisibility(View.INVISIBLE);
+                    mcText6.setVisibility(View.INVISIBLE);
+                    option.setVisibility(View.VISIBLE);
+                    count=5;
                 }
             }
         });
