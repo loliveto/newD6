@@ -47,11 +47,18 @@ public class Menu extends Fragment {
                 ((MainActivity)getActivity()).toSeeQuestionare();
             }
         });
-        Button viewQ = view.findViewById(R.id.ViewQuest);
-        viewQ.setOnClickListener(new View.OnClickListener() {
+        Button editQ = view.findViewById(R.id.ViewQuest);
+        editQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity)getActivity()).toViewQuestionares();
+            }
+        });
+        Button takeQ = view.findViewById(R.id.TakeQuest);
+        takeQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toTakeQuestionares();
             }
         });
         return view;

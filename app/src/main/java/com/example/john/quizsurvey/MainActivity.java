@@ -11,6 +11,7 @@ import com.example.john.quizsurvey.Views.CreateTFQuestion;
 import com.example.john.quizsurvey.Views.EditQuestion;
 import com.example.john.quizsurvey.Views.Menu;
 import com.example.john.quizsurvey.Views.QTypeSelect;
+import com.example.john.quizsurvey.Views.TakeViewAllQuestionares;
 import com.example.john.quizsurvey.Views.ViewAllQuestionares;
 import com.example.john.quizsurvey.Views.EditQuestionare;
 
@@ -66,6 +67,15 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         ViewAllQuestionares ql = ViewAllQuestionares.newInstance();
+        transaction.replace(R.id.main_activity,ql);
+        transaction.commit();
+    }
+
+    public void toTakeQuestionares()
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        TakeViewAllQuestionares ql = TakeViewAllQuestionares.newInstance();
         transaction.replace(R.id.main_activity,ql);
         transaction.commit();
     }
