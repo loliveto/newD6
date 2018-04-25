@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.DataModels.TFQuestion;
@@ -33,7 +34,6 @@ public class CreateTFQuestion extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -45,32 +45,25 @@ public class CreateTFQuestion extends Fragment {
         final EditText prompt = view.findViewById(R.id.TFQuestionPrompt);
 
         Button submit = view.findViewById(R.id.submitTF);
+        final RadioButton tbutton = view.findViewById(R.id.TrueButton);
+        final RadioButton fbutton = view.findViewById(R.id.FalseButton);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TFQuestion question = new TFQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
+                if(tbutton.isChecked()){
+                    questionare.asheet.addCorrectAnswer("True");
+                }else if(fbutton.isChecked()){
+                    questionare.asheet.addCorrectAnswer("False");
+                }
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
             }
         });
+
+
         return view;
-    }
-
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.TrueButton:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer("True");
-                    break;
-            case R.id.FalseButton:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer("False");
-                    break;
-        }
     }
 
 }

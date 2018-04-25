@@ -8,10 +8,12 @@ import android.os.Bundle;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.Views.CreateMCQuestion;
+import com.example.john.quizsurvey.Views.CreateShortQuestion;
 import com.example.john.quizsurvey.Views.CreateTFQuestion;
 import com.example.john.quizsurvey.Views.EditQuestion;
 import com.example.john.quizsurvey.Views.Menu;
 import com.example.john.quizsurvey.Views.QTypeSelect;
+import com.example.john.quizsurvey.Views.TakeViewAllQuestionares;
 import com.example.john.quizsurvey.Views.ViewAllQuestionares;
 import com.example.john.quizsurvey.Views.EditQuestionare;
 
@@ -62,11 +64,29 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    public void toCreateShort(Questionare q)
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateShortQuestion shortq = CreateShortQuestion.newInstance(q);
+        transaction.replace(R.id.main_activity,shortq);
+        transaction.commit();
+    }
+
     public void toViewQuestionares()
     {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         ViewAllQuestionares ql = ViewAllQuestionares.newInstance();
+        transaction.replace(R.id.main_activity,ql);
+        transaction.commit();
+    }
+
+    public void toTakeQuestionares()
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        TakeViewAllQuestionares ql = TakeViewAllQuestionares.newInstance();
         transaction.replace(R.id.main_activity,ql);
         transaction.commit();
     }

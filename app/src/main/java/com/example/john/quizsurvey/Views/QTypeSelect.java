@@ -56,6 +56,14 @@ public class QTypeSelect extends Fragment{
             }
         });
 
+        Button shortbutton = view.findViewById(R.id.shortansbutton);
+        shortbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toCreateShort(q);
+            }
+        });
+
         return view;
     }
 }
