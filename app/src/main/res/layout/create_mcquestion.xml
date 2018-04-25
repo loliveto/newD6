@@ -26,8 +26,12 @@
         android:layout_width="57dp"
         android:layout_height="285dp"
         android:layout_marginBottom="112dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="55dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
             android:id="@+id/mcOption1"
@@ -74,65 +78,89 @@
         android:id="@+id/mcText1"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Option 1"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="114dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addOption" />
 
     <EditText
         android:id="@+id/mcText2"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Option 2"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/mcText1"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mcText1" />
 
     <EditText
         android:id="@+id/mcText3"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Option 3"
         android:inputType="textPersonName"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/mcText2"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mcText2" />
 
     <EditText
         android:id="@+id/mcText4"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Option 4"
         android:inputType="textPersonName"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/mcText3"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mcText3" />
 
     <EditText
         android:id="@+id/mcText5"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Option 5"
         android:inputType="textPersonName"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/mcText4"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mcText4" />
 
     <EditText
         android:id="@+id/mcText6"
         android:layout_width="wrap_content"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Option 6"
         android:inputType="textPersonName"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/mcText5"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mcText5" />
 
     <Button
         android:id="@+id/addOption"
@@ -140,11 +168,12 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:text="Add Option"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="56dp" />
+        app:layout_constraintTop_toBottomOf="@+id/mcprompt" />
 
     <Button
         android:id="@+id/submitMC"

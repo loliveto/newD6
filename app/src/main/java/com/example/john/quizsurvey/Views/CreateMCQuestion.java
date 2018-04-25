@@ -133,28 +133,42 @@ public class CreateMCQuestion extends Fragment {
 
        // final EditText mcText1 = view.findViewById(R.id.mcText1);
        // final EditText mcText2 = view.findViewById(R.id.mcText2);
-        final EditText mcText3 = view.findViewById(R.id.mcText3);
-        final EditText mcText4 = view.findViewById(R.id.mcText4);
-        final EditText mcText5 = view.findViewById(R.id.mcText5);
-        final EditText mcText6 = view.findViewById(R.id.mcText6);
+
 
         option.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                 EditText mcText3 = v.findViewById(R.id.mcText3);
+                 EditText mcText4 = v.findViewById(R.id.mcText4);
+                 EditText mcText5 = v.findViewById(R.id.mcText5);
+                 EditText mcText6 = v.findViewById(R.id.mcText6);
+                 Button mcOption3 = v.findViewById(R.id.mcOption3);
+                Button mcOption4 = v.findViewById(R.id.mcOption4);
+                Button mcOption5 = v.findViewById(R.id.mcOption5);
+                Button mcOption6 = v.findViewById(R.id.mcOption6);
+
+
                 if (count == 2) {
                     //final EditText mcText3 = view.findViewById(R.id.mcText3);
                     mcText3.setVisibility(View.VISIBLE);
+                    mcOption3.setVisibility(View.VISIBLE);
                     count = 3;
                 } else if (count == 3) {
                     // final EditText mcText4 = view.findViewById(R.id.mcText4);
                     mcText4.setVisibility(View.VISIBLE);
+                    mcOption4.setVisibility(View.VISIBLE);
+
                     count = 4;
                 } else if (count == 4) {
                     // final EditText mcText5 = view.findViewById(R.id.mcText5);
                     mcText5.setVisibility(View.VISIBLE);
+                    mcOption5.setVisibility(View.VISIBLE);
+
                     count = 5;
                 } else if (count == 5) {
                     //final EditText mcText6 = view.findViewById(R.id.mcText6);
                     mcText6.setVisibility(View.VISIBLE);
+                    mcOption6.setVisibility(View.VISIBLE);
+
                     count = 6;
                 }
             }
