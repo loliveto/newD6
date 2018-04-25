@@ -100,6 +100,8 @@ public class CreateMCQuestion extends Fragment {
         }
     }
 
+    int count = 2;
+
     public void onButtonClicked(View view){
 
         //onButtonClicked(View view);
@@ -125,30 +127,37 @@ public class CreateMCQuestion extends Fragment {
 
       }
          */
-        Button option = (Button) findViewById(R.id.addOption);
-        final int count = 2;
+        Button option = (Button) view.findViewById(R.id.addOption);
+        //final int count = 2;
+
+
+       // final EditText mcText1 = view.findViewById(R.id.mcText1);
+       // final EditText mcText2 = view.findViewById(R.id.mcText2);
+        final EditText mcText3 = view.findViewById(R.id.mcText3);
+        final EditText mcText4 = view.findViewById(R.id.mcText4);
+        final EditText mcText5 = view.findViewById(R.id.mcText5);
+        final EditText mcText6 = view.findViewById(R.id.mcText6);
+
         option.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(count == 2){
-                    final EditText mcText3 = view.findViewById(R.id.mcText3);
+                if (count == 2) {
+                    //final EditText mcText3 = view.findViewById(R.id.mcText3);
                     mcText3.setVisibility(View.VISIBLE);
-                    count=3;
-                }
-                else if(count == 3){
-                    final EditText mcText4 = view.findViewById(R.id.mcText4);
+                    count = 3;
+                } else if (count == 3) {
+                    // final EditText mcText4 = view.findViewById(R.id.mcText4);
                     mcText4.setVisibility(View.VISIBLE);
-                    count=4;
-                }
-                else if(count == 4){
-                    final EditText mcText5 = view.findViewById(R.id.mcText5);
+                    count = 4;
+                } else if (count == 4) {
+                    // final EditText mcText5 = view.findViewById(R.id.mcText5);
                     mcText5.setVisibility(View.VISIBLE);
-                    count=5;
-                }
-                else if(count == 5){
-                    final EditText mcText6 = view.findViewById(R.id.mcText6);
+                    count = 5;
+                } else if (count == 5) {
+                    //final EditText mcText6 = view.findViewById(R.id.mcText6);
                     mcText6.setVisibility(View.VISIBLE);
-                    count=6;
+                    count = 6;
                 }
             }
-
+        });
+    }
 }
