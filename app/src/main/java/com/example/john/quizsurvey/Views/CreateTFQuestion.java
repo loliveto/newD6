@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.DataModels.TFQuestion;
@@ -19,6 +20,8 @@ import com.example.john.quizsurvey.R;
 public class CreateTFQuestion extends Fragment {
 
     Questionare questionare;
+    RadioGroup rgroup;
+    RadioButton rbutton;
 
     public CreateTFQuestion() {
         // Required empty public constructor
@@ -56,21 +59,23 @@ public class CreateTFQuestion extends Fragment {
         return view;
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.TrueButton:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer("True");
-                    break;
-            case R.id.FalseButton:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer("False");
-                    break;
-        }
-    }
+
+//    public void onRadioButtonClicked(View view) {
+//        // Is the button now checked?
+//        boolean checked = ((RadioButton) view).isChecked();
+//
+//        // Check which radio button was clicked
+//        switch(view.getId()) {
+//            case R.id.TrueButton:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer("True");
+//                    break;
+//            case R.id.FalseButton:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer("False");
+//                    break;
+//        }
+//    }
 
 }

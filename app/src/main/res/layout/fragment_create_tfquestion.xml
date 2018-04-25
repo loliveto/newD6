@@ -24,16 +24,20 @@
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
+
             <RadioButton
                 android:id="@+id/TrueButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="True" />
 
             <RadioButton
                 android:id="@+id/FalseButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:checked="false"
+                android:duplicateParentState="false"
                 android:text="False" />
         </RadioGroup>
 
