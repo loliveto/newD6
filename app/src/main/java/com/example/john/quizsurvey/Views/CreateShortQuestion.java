@@ -1,17 +1,15 @@
 package com.example.john.quizsurvey.Views;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.DataModels.ShortQuestion;
-import com.example.john.quizsurvey.DataModels.TFQuestion;
 import com.example.john.quizsurvey.MainActivity;
 import com.example.john.quizsurvey.R;
 
@@ -27,7 +25,7 @@ public class CreateShortQuestion extends Fragment {
 
     public static CreateShortQuestion newInstance(Questionare q) {
         CreateShortQuestion fragment = new CreateShortQuestion();
-        fragment.questionare = q;
+        fragment.questionare= q;
         return fragment;
     }
 

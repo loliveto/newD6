@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.Views.CreateMCQuestion;
+import com.example.john.quizsurvey.Views.CreateShortQuestion;
 import com.example.john.quizsurvey.Views.CreateTFQuestion;
 import com.example.john.quizsurvey.Views.EditQuestion;
 import com.example.john.quizsurvey.Views.Menu;
@@ -60,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         CreateTFQuestion tf = CreateTFQuestion.newInstance(q);
         transaction.replace(R.id.main_activity,tf);
+        transaction.commit();
+    }
+
+    public void toCreateShort(Questionare q)
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateShortQuestion shortq = CreateShortQuestion.newInstance(q);
+        transaction.replace(R.id.main_activity,shortq);
         transaction.commit();
     }
 
