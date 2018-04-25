@@ -20,8 +20,6 @@ import com.example.john.quizsurvey.R;
 public class CreateTFQuestion extends Fragment {
 
     Questionare questionare;
-    RadioGroup rgroup;
-    RadioButton rbutton;
 
     public CreateTFQuestion() {
         // Required empty public constructor
@@ -48,34 +46,25 @@ public class CreateTFQuestion extends Fragment {
         final EditText prompt = view.findViewById(R.id.TFQuestionPrompt);
 
         Button submit = view.findViewById(R.id.submitTF);
+        final RadioButton tbutton = view.findViewById(R.id.TrueButton);
+        final RadioButton fbutton = view.findViewById(R.id.FalseButton);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TFQuestion question = new TFQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
+                if(tbutton.isChecked()){
+                    questionare.asheet.addCorrectAnswer("True");
+                }else if(fbutton.isChecked()){
+                    questionare.asheet.addCorrectAnswer("False");
+                }
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
             }
         });
+
+
         return view;
     }
-
-
-
-//    public void onRadioButtonClicked(View view) {
-//        // Is the button now checked?
-//        boolean checked = ((RadioButton) view).isChecked();
-//
-//        // Check which radio button was clicked
-//        switch(view.getId()) {
-//            case R.id.TrueButton:
-//                if (checked)
-//                    questionare.asheet.addCorrectAnswer("True");
-//                    break;
-//            case R.id.FalseButton:
-//                if (checked)
-//                    questionare.asheet.addCorrectAnswer("False");
-//                    break;
-//        }
-//    }
 
 }
