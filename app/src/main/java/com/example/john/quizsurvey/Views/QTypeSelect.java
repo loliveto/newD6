@@ -44,9 +44,10 @@ public class QTypeSelect extends Fragment{
         mcbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).toSeeQuestionare();
+                ((MainActivity)getActivity()).toCreateMC(q);
             }
         });
+
         Button tfbutton = view.findViewById(R.id.tfbutton);
         tfbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,7 @@ public class QTypeSelect extends Fragment{
                 ((MainActivity)getActivity()).toCreateTF(q);
             }
         });
+
         return view;
     }
 }

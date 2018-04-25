@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
+import com.example.john.quizsurvey.Views.CreateMCQuestion;
 import com.example.john.quizsurvey.Views.CreateTFQuestion;
 import com.example.john.quizsurvey.Views.EditQuestion;
 import com.example.john.quizsurvey.Views.Menu;
@@ -83,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         QTypeSelect q1 = QTypeSelect.newInstance(q);
         transaction.replace(R.id.main_activity,q1);
+        transaction.commit();
+    }
+
+    public void toCreateMC(Questionare q){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateMCQuestion mc = CreateMCQuestion.newInstance(q);
+        transaction.replace(R.id.main_activity,mc);
         transaction.commit();
     }
 }
