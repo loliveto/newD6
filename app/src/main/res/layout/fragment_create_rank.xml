@@ -7,42 +7,59 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/rankprompt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Prompt"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/rankadd"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="5dp"
+        android:text="Add Option"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rankprompt" />
+
+    <Button
+        android:id="@+id/rankremove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="5dp"
+        android:text="Remove Option"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rankprompt" />
 
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="317dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText">
+        app:layout_constraintTop_toBottomOf="@+id/rankprompt">
 
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:text=" 1."
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
-
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/rank1"
                 android:layout_width="308dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Item 1"
+                android:hint="Rank 1"
                 android:inputType="textPersonName" />
         </TableRow>
 
@@ -50,20 +67,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" 2."
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
-
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/rank2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Item 2"
+                android:hint="Rank 2"
                 android:inputType="textPersonName" />
         </TableRow>
 
@@ -71,21 +80,62 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" 3."
-                android:textColor="@android:color/black"
-                android:textSize="20sp" />
-
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/rank3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Item 3"
-                android:inputType="textPersonName" />
+                android:hint="Rank 3"
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/rank4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Rank 4"
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/rank5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Rank 5"
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/rank6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Rank 6"
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/ranksubmit"
+        android:layout_width="370dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

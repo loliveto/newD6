@@ -64,6 +64,14 @@ public class QTypeSelect extends Fragment{
             }
         });
 
+        Button rankbutton = view.findViewById(R.id.rankbutton);
+        rankbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toCreateRank(q);
+            }
+        });
+
         return view;
     }
 }
