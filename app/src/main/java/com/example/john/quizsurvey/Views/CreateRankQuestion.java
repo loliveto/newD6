@@ -69,7 +69,7 @@ public class CreateRankQuestion extends Fragment {
                 anslist.add(rank2.getText().toString());
                 anslist.add(rank1.getText().toString());
                 for(String a:anslist){
-                    ans = a + " " + ans;
+                    ans = a + ", " + ans;
                 }
                 questionare.asheet.addCorrectAnswer(ans);
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
