@@ -72,6 +72,14 @@ public class QTypeSelect extends Fragment{
             }
         });
 
+        Button matchbutton = view.findViewById(R.id.matchbutton);
+        matchbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toCreateRank(q);
+            }
+        });
+
         return view;
     }
 }
