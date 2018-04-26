@@ -111,7 +111,7 @@ public class TakeViewAllQuestionares extends Fragment {
                 //VERY IMPORTANT- App will eventually crash if listener not detached before leave fragment
                 ref.removeEventListener(listener);
                 Questionare selectedQuestionare = questionares.get(position);
-                ((MainActivity)getActivity()).toSeeQuestionare(selectedQuestionare);
+                ((MainActivity)getActivity()).toTakeQuestionare(selectedQuestionare);
             }
         });
         return view;
