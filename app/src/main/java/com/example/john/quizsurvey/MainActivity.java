@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
+import com.example.john.quizsurvey.Views.CreateLongQuestion;
 import com.example.john.quizsurvey.Views.CreateMCQuestion;
 import com.example.john.quizsurvey.Views.CreateRankQuestion;
 import com.example.john.quizsurvey.Views.CreateShortQuestion;
@@ -72,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         CreateShortQuestion shortq = CreateShortQuestion.newInstance(q);
         transaction.replace(R.id.main_activity,shortq);
+        transaction.commit();
+    }
+
+    public void toLongShort(Questionare q)
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateLongQuestion longq = CreateLongQuestion.newInstance(q);
+        transaction.replace(R.id.main_activity,longq);
         transaction.commit();
     }
 
