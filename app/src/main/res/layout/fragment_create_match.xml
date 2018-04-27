@@ -48,7 +48,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/1match1"
+                android:id="@+id/match11"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -56,7 +56,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/1match2"
+                android:id="@+id/match12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -69,7 +69,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/2match1"
+                android:id="@+id/match21"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -77,7 +77,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/2match2"
+                android:id="@+id/match22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -90,7 +90,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/3match1"
+                android:id="@+id/match31"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -98,7 +98,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/3match2"
+                android:id="@+id/match32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -109,7 +109,7 @@
         <TableRow>
 
             <EditText
-                android:id="@+id/4match1"
+                android:id="@+id/match41"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -117,7 +117,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/4match2"
+                android:id="@+id/match42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -128,7 +128,7 @@
         <TableRow>
 
             <EditText
-                android:id="@+id/5match1"
+                android:id="@+id/match51"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -136,7 +136,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/5match2"
+                android:id="@+id/match52"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -147,7 +147,7 @@
         <TableRow>
 
             <EditText
-                android:id="@+id/6match1"
+                android:id="@+id/match61"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -155,7 +155,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/6match2"
+                android:id="@+id/match62"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -167,7 +167,7 @@
 
     <Button
         android:id="@+id/submitmatch"
-        android:layout_width="350"
+        android:layout_width="350dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="300dp"
