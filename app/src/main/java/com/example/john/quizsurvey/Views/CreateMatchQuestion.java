@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.john.quizsurvey.DataModels.MCQuestion;
+import com.example.john.quizsurvey.DataModels.MatchQuestion;
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.MainActivity;
 import com.example.john.quizsurvey.R;
@@ -46,9 +46,9 @@ public class CreateMatchQuestion extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_create_match, container, false);
-        final EditText prompt = view.findViewById(R.id.rankprompt);
+        final EditText prompt = view.findViewById(R.id.matchprompt);
 
-        final Button option = (Button) view.findViewById(R.id.addmatch);
+        final Button option = view.findViewById(R.id.addmatch);
         final Button removeOpt = view.findViewById(R.id.removematch);
         final EditText match11 = view.findViewById(R.id.match11);
         final EditText match12 = view.findViewById(R.id.match12);
@@ -67,7 +67,7 @@ public class CreateMatchQuestion extends Fragment{
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MCQuestion question = new MCQuestion(prompt.getText().toString());
+                MatchQuestion question = new MatchQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
                 match1list.add(match11.getText().toString());
                 match1list.add(match21.getText().toString());
@@ -82,10 +82,10 @@ public class CreateMatchQuestion extends Fragment{
                 match2list.add(match52.getText().toString());
                 match2list.add(match62.getText().toString());
 
+                int i = 0;
                 for(String a:match1list){
-                    for(String b:match2list){
-                        ans = ans + a + "-" + b + ", ";
-                    }
+                    ans = ans + a + "-" + match2list.get(i) + ", ";
+                    i++;
                 }
                 questionare.asheet.addCorrectAnswer(ans);
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
@@ -93,56 +93,68 @@ public class CreateMatchQuestion extends Fragment{
             }
         });
 
-//        option.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(count==2){
-//                    rank3.setVisibility(View.VISIBLE);
-//                    removeOpt.setVisibility(View.VISIBLE);
-//                    count=3;
-//                }
-//                else if(count==3){
-//                    rank4.setVisibility(View.VISIBLE);
-//                    count=4;
-//                }
-//                else if(count==4){
-//                    rank5.setVisibility(View.VISIBLE);
-//                    count=5;
-//                }
-//                else if(count==5){
-//                    rank6.setVisibility(View.VISIBLE);
-//                    option.setVisibility(View.INVISIBLE);
-//                    count=6;
-//                }
-//            }
-//        });
-//        removeOpt.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(count==3){
-//                    rank3.setVisibility(View.INVISIBLE);
-//                    rank3.setText("");
-//                    removeOpt.setVisibility(View.INVISIBLE);
-//                    count=2;
-//                }
-//                else if(count==4){
-//                    rank4.setVisibility(View.INVISIBLE);
-//                    rank4.setText("");
-//                    count=3;
-//                }
-//                else if(count==5){
-//                    rank5.setVisibility(View.INVISIBLE);
-//                    rank5.setText("");
-//                    count=4;
-//                }
-//                else if(count==6){
-//                    rank6.setVisibility(View.INVISIBLE);
-//                    rank6.setText("");
-//                    option.setVisibility(View.VISIBLE);
-//                    count=5;
-//                }
-//            }
-//        });
+        option.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(count==2){
+                    match31.setVisibility(View.VISIBLE);
+                    match32.setVisibility(View.VISIBLE);
+                    removeOpt.setVisibility(View.VISIBLE);
+                    count=3;
+                }
+                else if(count==3){
+                    match41.setVisibility(View.VISIBLE);
+                    match42.setVisibility(View.VISIBLE);
+                    count=4;
+                }
+                else if(count==4){
+                    match51.setVisibility(View.VISIBLE);
+                    match52.setVisibility(View.VISIBLE);
+                    count=5;
+                }
+                else if(count==5){
+                    match61.setVisibility(View.VISIBLE);
+                    match62.setVisibility(View.VISIBLE);
+                    option.setVisibility(View.INVISIBLE);
+                    count=6;
+                }
+            }
+        });
+        removeOpt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(count==3){
+                    match31.setVisibility(View.INVISIBLE);
+                    match31.setText("");
+                    match32.setVisibility(View.INVISIBLE);
+                    match32.setText("");
+                    removeOpt.setVisibility(View.INVISIBLE);
+                    count=2;
+                }
+                else if(count==4){
+                    match41.setVisibility(View.INVISIBLE);
+                    match41.setText("");
+                    match42.setVisibility(View.INVISIBLE);
+                    match42.setText("");
+                    count=3;
+                }
+                else if(count==5){
+                    match51.setVisibility(View.INVISIBLE);
+                    match51.setText("");
+                    match52.setVisibility(View.INVISIBLE);
+                    match52.setText("");
+                    count=4;
+                }
+                else if(count==6){
+                    match61.setVisibility(View.INVISIBLE);
+                    match61.setText("");
+                    match62.setVisibility(View.INVISIBLE);
+                    match62.setText("");
+                    option.setVisibility(View.VISIBLE);
+                    count=5;
+                }
+            }
+        });
         return view;
     }
 

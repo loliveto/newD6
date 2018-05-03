@@ -76,7 +76,7 @@ public class QTypeSelect extends Fragment{
         matchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).toCreateRank(q);
+                ((MainActivity)getActivity()).toCreateMatch(q);
             }
         });
 
