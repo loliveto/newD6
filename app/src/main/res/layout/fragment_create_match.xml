@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:text="Remove Option"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/matchprompt" />
 
@@ -95,7 +96,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Third Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/match32"
@@ -103,7 +105,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Third Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
         </TableRow>
 
         <TableRow>
@@ -114,7 +117,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fourth Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/match42"
@@ -122,7 +126,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fourth Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
         </TableRow>
 
         <TableRow>
@@ -133,7 +138,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fifth Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/match52"
@@ -141,7 +147,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fifth Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
         </TableRow>
 
         <TableRow>
@@ -152,7 +159,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Sixth Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/match62"
@@ -160,7 +168,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Sixth Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
         </TableRow>
 
     </TableLayout>
