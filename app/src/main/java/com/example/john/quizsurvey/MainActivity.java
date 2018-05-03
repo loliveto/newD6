@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.john.quizsurvey.DataModels.Question;
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.Views.CreateLongQuestion;
 import com.example.john.quizsurvey.Views.CreateMCQuestion;
@@ -160,6 +161,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         CreateMCQuestion mc = CreateMCQuestion.newInstance(q);
+        transaction.replace(R.id.main_activity,mc);
+        transaction.commit();
+    }
+
+    public void toCreateMC(Questionare q, Question qu){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateMCQuestion mc = CreateMCQuestion.newInstance(q, qu);
         transaction.replace(R.id.main_activity,mc);
         transaction.commit();
     }

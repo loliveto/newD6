@@ -113,6 +113,11 @@ public class EditQuestionare extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //trying
+                if(questionare.getQuestion(position).type == "MC"){
+                    ((MainActivity)getActivity()).toCreateMC(questionare, questionare.getQuestion(position));
+                }
+                //trying
                 ((MainActivity)getActivity()).toViewQuestion(questionare, position);
             }
         });

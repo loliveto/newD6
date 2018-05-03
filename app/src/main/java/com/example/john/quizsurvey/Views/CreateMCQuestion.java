@@ -25,6 +25,7 @@ import com.example.john.quizsurvey.R;
 public class CreateMCQuestion extends Fragment{
 
     Questionare questionare;
+    Question mcq;
     int count = 2;
 
     public CreateMCQuestion() {
@@ -34,6 +35,13 @@ public class CreateMCQuestion extends Fragment{
     public static CreateMCQuestion newInstance(Questionare q) {
         CreateMCQuestion fragment = new CreateMCQuestion();
         fragment.questionare = q;
+        return fragment;
+    }
+
+    public static CreateMCQuestion newInstance(Questionare q, Question qu) {
+        CreateMCQuestion fragment = new CreateMCQuestion();
+        fragment.questionare = q;
+        fragment.mcq = qu;
         return fragment;
     }
 
@@ -50,7 +58,7 @@ public class CreateMCQuestion extends Fragment{
         View view =  inflater.inflate(R.layout.create_mcquestion, container, false);
 
         final EditText prompt = view.findViewById(R.id.mcprompt);
-        //final Snackbar mysnackbar = Snackbar.make(view, "Saved", Snackbar.LENGTH_SHORT);
+        prompt.setText(mcq.prompt);
 
         final Button option = (Button) view.findViewById(R.id.addOption);
         final Button removeOpt = view.findViewById(R.id.removeOption);
@@ -71,7 +79,6 @@ public class CreateMCQuestion extends Fragment{
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // mysnackbar.show();
                 MCQuestion question = new MCQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
                 if(mcOption1.isChecked()){
