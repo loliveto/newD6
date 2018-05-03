@@ -1,9 +1,11 @@
 package com.example.john.quizsurvey.Views;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ public class CreateMCQuestion extends Fragment{
     Questionare questionare;
     Question mcq;
     int count = 2;
+    static boolean isNew;
 
     public CreateMCQuestion() {
         // Required empty public constructor
@@ -35,6 +38,7 @@ public class CreateMCQuestion extends Fragment{
     public static CreateMCQuestion newInstance(Questionare q) {
         CreateMCQuestion fragment = new CreateMCQuestion();
         fragment.questionare = q;
+        isNew = true;
         return fragment;
     }
 
@@ -42,6 +46,7 @@ public class CreateMCQuestion extends Fragment{
         CreateMCQuestion fragment = new CreateMCQuestion();
         fragment.questionare = q;
         fragment.mcq = qu;
+        isNew = false;
         return fragment;
     }
 
@@ -58,8 +63,9 @@ public class CreateMCQuestion extends Fragment{
         View view =  inflater.inflate(R.layout.create_mcquestion, container, false);
 
         final EditText prompt = view.findViewById(R.id.mcprompt);
-        prompt.setText(mcq.prompt);
-
+        if(!isNew) {
+            prompt.setText(mcq.prompt);
+        }
         final Button option = (Button) view.findViewById(R.id.addOption);
         final Button removeOpt = view.findViewById(R.id.removeOption);
         final RadioButton mcOption1 = view.findViewById(R.id.mcOption1);
@@ -75,31 +81,94 @@ public class CreateMCQuestion extends Fragment{
         final EditText mcText5 = view.findViewById(R.id.mcText5);
         final EditText mcText6 = view.findViewById(R.id.mcText6);
 
+        if(!isNew){
+            mcText1.setText(mcq.getOptions().get(0));
+            mcText2.setText(mcq.getOptions().get(1));
+            mcText3.setText(mcq.getOptions().get(2));
+            if(!mcq.getOptions().get(2).equals("")){
+                mcOption3.setVisibility(View.VISIBLE);
+                mcText3.setVisibility(View.VISIBLE);
+                removeOpt.setVisibility(View.VISIBLE);
+                count = 3;
+            }
+            mcText4.setText(mcq.getOptions().get(3));
+            if(!mcq.getOptions().get(3).equals("")){
+                mcOption4.setVisibility(View.VISIBLE);
+                mcText4.setVisibility(View.VISIBLE);
+                count = 4;
+            }
+            mcText5.setText(mcq.getOptions().get(4));
+            if(!mcq.getOptions().get(4).equals("")){
+                mcOption5.setVisibility(View.VISIBLE);
+                mcText5.setVisibility(View.VISIBLE);
+                count = 5;
+            }
+            mcText6.setText(mcq.getOptions().get(5));
+            if(!mcq.getOptions().get(5).equals("")){
+                mcOption6.setVisibility(View.VISIBLE);
+                mcText6.setVisibility(View.VISIBLE);
+                option.setVisibility(View.INVISIBLE);
+                count = 6;
+            }
+        }
+
         final Button submit = view.findViewById(R.id.submitMC);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MCQuestion question = new MCQuestion(prompt.getText().toString());
-                questionare.addQuestion(question);
-                if(mcOption1.isChecked()){
-                    questionare.asheet.addCorrectAnswer(mcText1.getText().toString());
-                }else if(mcOption2.isChecked()){
-                    questionare.asheet.addCorrectAnswer(mcText2.getText().toString());
-                }else if(mcOption3.isChecked()){
-                    questionare.asheet.addCorrectAnswer(mcText3.getText().toString());
-                }else if(mcOption4.isChecked()){
-                    questionare.asheet.addCorrectAnswer(mcText4.getText().toString());
-                }else if(mcOption5.isChecked()){
-                    questionare.asheet.addCorrectAnswer(mcText5.getText().toString());
-                }else if(mcOption6.isChecked()){
-                    questionare.asheet.addCorrectAnswer(mcText6.getText().toString());
+                if(isNew){
+                    questionare.addQuestion(question);
+                }else{
+                    mcq.prompt = prompt.getText().toString();
                 }
-                question.setOption(mcText1.getText().toString());
-                question.setOption(mcText2.getText().toString());
-                question.setOption(mcText3.getText().toString());
-                question.setOption(mcText4.getText().toString());
-                question.setOption(mcText5.getText().toString());
-                question.setOption(mcText6.getText().toString());
+
+                if(isNew) {
+                    if (mcOption1.isChecked()) {
+                        questionare.asheet.addCorrectAnswer(mcText1.getText().toString());
+                    } else if (mcOption2.isChecked()) {
+                        questionare.asheet.addCorrectAnswer(mcText2.getText().toString());
+                    } else if (mcOption3.isChecked()) {
+                        questionare.asheet.addCorrectAnswer(mcText3.getText().toString());
+                    } else if (mcOption4.isChecked()) {
+                        questionare.asheet.addCorrectAnswer(mcText4.getText().toString());
+                    } else if (mcOption5.isChecked()) {
+                        questionare.asheet.addCorrectAnswer(mcText5.getText().toString());
+                    } else if (mcOption6.isChecked()) {
+                        questionare.asheet.addCorrectAnswer(mcText6.getText().toString());
+                    }
+                }else{
+                    if (mcOption1.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText1.getText().toString());
+                    } else if (mcOption2.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText2.getText().toString());
+                    } else if (mcOption3.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText3.getText().toString());
+                    } else if (mcOption4.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText4.getText().toString());
+                    } else if (mcOption5.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText5.getText().toString());
+                    } else if (mcOption6.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText6.getText().toString());
+                    }
+                }
+
+                if(!isNew){
+                    mcq.options.clear();
+                    mcq.setOption(mcText1.getText().toString());
+                    mcq.setOption(mcText2.getText().toString());
+                    mcq.setOption(mcText3.getText().toString());
+                    mcq.setOption(mcText4.getText().toString());
+                    mcq.setOption(mcText5.getText().toString());
+                    mcq.setOption(mcText6.getText().toString());
+                }else {
+                    question.setOption(mcText1.getText().toString());
+                    question.setOption(mcText2.getText().toString());
+                    question.setOption(mcText3.getText().toString());
+                    question.setOption(mcText4.getText().toString());
+                    question.setOption(mcText5.getText().toString());
+                    question.setOption(mcText6.getText().toString());
+                }
 
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
 

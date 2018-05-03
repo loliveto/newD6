@@ -114,11 +114,13 @@ public class EditQuestionare extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //trying
-                if(questionare.getQuestion(position).type == "MC"){
+                if(questionare.getQuestion(position).type.equals("MC")){
                     ((MainActivity)getActivity()).toCreateMC(questionare, questionare.getQuestion(position));
                 }
                 //trying
-                ((MainActivity)getActivity()).toViewQuestion(questionare, position);
+                else {
+                    ((MainActivity) getActivity()).toViewQuestion(questionare, position);
+                }
             }
         });
 
