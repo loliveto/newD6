@@ -2,6 +2,7 @@ package com.example.john.quizsurvey.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,11 +49,13 @@ public class CreateMCQuestion extends Fragment{
         View view =  inflater.inflate(R.layout.create_mcquestion, container, false);
 
         final EditText prompt = view.findViewById(R.id.mcprompt);
+        //final Snackbar mysnackbar = Snackbar.make(view, "Saved", Snackbar.LENGTH_SHORT);
 
         final Button submit = view.findViewById(R.id.submitMC);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // mysnackbar.show();
                 MCQuestion question = new MCQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
