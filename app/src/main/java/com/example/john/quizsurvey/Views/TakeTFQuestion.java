@@ -13,11 +13,17 @@ public class TakeTFQuestion extends Fragment {
 
     Questionare questionare;
     Question tfq;
+    String name;
 
-    public static TakeTFQuestion newInstance(Questionare q, Question qu) {
+    public TakeTFQuestion() {
+        // Required empty public constructor
+    }
+
+    public static TakeTFQuestion newInstance(Questionare q, Question qu, String name) {
         TakeTFQuestion fragment = new TakeTFQuestion();
         fragment.questionare = q;
         fragment.tfq = qu;
+        fragment.name = name;
         return fragment;
     }
 }

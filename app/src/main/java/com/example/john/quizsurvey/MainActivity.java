@@ -180,45 +180,53 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void toTakeMC(Questionare q, Question qu){
+    public void toCreateMC(Questionare q, Question qu){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeMCQuestion mc = TakeMCQuestion.newInstance(q, qu);
+        CreateMCQuestion mc = CreateMCQuestion.newInstance(q,qu);
         transaction.replace(R.id.main_activity,mc);
         transaction.commit();
     }
-    public void toTakeTF(Questionare q, Question qu){
+
+    public void toTakeMC(Questionare q, Question qu, String name){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeTFQuestion tf = TakeTFQuestion.newInstance(q, qu);
+        TakeMCQuestion mc = TakeMCQuestion.newInstance(q, qu, name);
+        transaction.replace(R.id.main_activity,mc);
+        transaction.commit();
+    }
+    public void toTakeTF(Questionare q, Question qu, String name){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        TakeTFQuestion tf = TakeTFQuestion.newInstance(q, qu, name);
         transaction.replace(R.id.main_activity,tf);
         transaction.commit();
     }
-    public void toTakeLQ(Questionare q, Question qu){
+    public void toTakeLQ(Questionare q, Question qu, String name){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeLongQuestion lq = TakeLongQuestion.newInstance(q, qu);
+        TakeLongQuestion lq = TakeLongQuestion.newInstance(q, qu, name);
         transaction.replace(R.id.main_activity,lq);
         transaction.commit();
     }
-    public void toTakeSQ(Questionare q, Question qu){
+    public void toTakeSQ(Questionare q, Question qu, String name){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeShortQuestion sq = TakeShortQuestion.newInstance(q, qu);
+        TakeShortQuestion sq = TakeShortQuestion.newInstance(q, qu, name);
         transaction.replace(R.id.main_activity,sq);
         transaction.commit();
     }
-    public void toTakeMA(Questionare q, Question qu){
+    public void toTakeMA(Questionare q, Question qu, String name){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeMatchQuestion ma = TakeMatchQuestion.newInstance(q, qu);
+        TakeMatchQuestion ma = TakeMatchQuestion.newInstance(q, qu, name);
         transaction.replace(R.id.main_activity,ma);
         transaction.commit();
     }
-    public void toTakeRQ(Questionare q, Question qu){
+    public void toTakeRQ(Questionare q, Question qu, String name){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeRankQuestion rq = TakeRankQuestion.newInstance(q, qu);
+        TakeRankQuestion rq = TakeRankQuestion.newInstance(q, qu, name);
         transaction.replace(R.id.main_activity,rq);
         transaction.commit();
     }

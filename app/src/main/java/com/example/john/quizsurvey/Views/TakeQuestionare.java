@@ -80,22 +80,39 @@ public class TakeQuestionare extends Fragment {
                 ((MainActivity)getActivity()).toTakeQuestionares();
             }
         });
+
+        final EditText name = view.findViewById(R.id.NameField);
+
         Button start = view.findViewById(R.id.start);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (questionare.getQuestion(0).type.equals("MC")) {
-                    ((MainActivity) getActivity()).toTakeMC(questionare, questionare.getQuestion(0));
-                } else if (questionare.getQuestion(0).type.equals("LQ")) {
-                    ((MainActivity) getActivity()).toTakeLQ(questionare, questionare.getQuestion(0));
-                } else if (questionare.getQuestion(0).type.equals("MA")) {
-                    ((MainActivity) getActivity()).toTakeMA(questionare, questionare.getQuestion(0));
-                } else if (questionare.getQuestion(0).type.equals("RQ")) {
-                    ((MainActivity) getActivity()).toTakeRQ(questionare, questionare.getQuestion(0));
-                } else if (questionare.getQuestion(0).type.equals("SQ")) {
-                    ((MainActivity) getActivity()).toTakeSQ(questionare, questionare.getQuestion(0));
-                } else if (questionare.getQuestion(0).type.equals("TF")) {
-                    ((MainActivity) getActivity()).toTakeTF(questionare, questionare.getQuestion(0));
+                String nameVar = name.getText().toString();
+                if(nameVar.isEmpty()){
+                    AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                    alertDialog.setTitle("Error");
+                    alertDialog.setMessage("Please Enter Your Name");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+                }else {
+                    if (questionare.getQuestion(0).type.equals("MC")) {
+                        ((MainActivity) getActivity()).toTakeMC(questionare, questionare.getQuestion(0),nameVar);
+                    } else if (questionare.getQuestion(0).type.equals("LQ")) {
+                        ((MainActivity) getActivity()).toTakeLQ(questionare, questionare.getQuestion(0),nameVar);
+                    } else if (questionare.getQuestion(0).type.equals("MA")) {
+                        ((MainActivity) getActivity()).toTakeMA(questionare, questionare.getQuestion(0),nameVar);
+                    } else if (questionare.getQuestion(0).type.equals("RQ")) {
+                        ((MainActivity) getActivity()).toTakeRQ(questionare, questionare.getQuestion(0),nameVar);
+                    } else if (questionare.getQuestion(0).type.equals("SQ")) {
+                        ((MainActivity) getActivity()).toTakeSQ(questionare, questionare.getQuestion(0),nameVar);
+                    } else if (questionare.getQuestion(0).type.equals("TF")) {
+                        ((MainActivity) getActivity()).toTakeTF(questionare, questionare.getQuestion(0),nameVar);
+                    }
                 }
             }
         });

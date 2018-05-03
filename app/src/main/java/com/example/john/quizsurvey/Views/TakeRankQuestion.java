@@ -13,11 +13,17 @@ public class TakeRankQuestion extends Fragment {
 
     Questionare questionare;
     Question raq;
+    String name;
 
-    public static TakeRankQuestion newInstance(Questionare q, Question qu) {
+    public TakeRankQuestion() {
+        // Required empty public constructor
+    }
+
+    public static TakeRankQuestion newInstance(Questionare q, Question qu, String name) {
         TakeRankQuestion fragment = new TakeRankQuestion();
         fragment.questionare = q;
         fragment.raq = qu;
+        fragment.name = name;
         return fragment;
     }
 }

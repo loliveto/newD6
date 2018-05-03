@@ -13,11 +13,17 @@ public class TakeMatchQuestion extends Fragment {
 
     Questionare questionare;
     Question maq;
+    String name;
 
-    public static TakeMatchQuestion newInstance(Questionare q, Question qu) {
+    public TakeMatchQuestion() {
+        // Required empty public constructor
+    }
+
+    public static TakeMatchQuestion newInstance(Questionare q, Question qu, String name) {
         TakeMatchQuestion fragment = new TakeMatchQuestion();
         fragment.questionare = q;
         fragment.maq = qu;
+        fragment.name = name;
         return fragment;
     }
 }

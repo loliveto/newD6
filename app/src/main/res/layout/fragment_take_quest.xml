@@ -17,34 +17,44 @@
 
             <TextView
                 android:id="@+id/questionare_title"
-                android:layout_width="193dp"
+                android:layout_width="191dp"
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/go_home"
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:text="Home" />
-
-            <Button
-                android:id="@+id/go_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Back" />
 
         </TableRow>
 
         <TableRow
-            android:layout_width="275dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/NameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Name:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
+            <EditText
+                android:id="@+id/NameField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
@@ -57,6 +67,12 @@
                 android:layout_height="wrap_content"
                 android:text="Start"
                 android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/go_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back" />
         </TableRow>
 
     </TableLayout>
