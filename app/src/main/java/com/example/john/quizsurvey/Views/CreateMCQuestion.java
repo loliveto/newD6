@@ -139,22 +139,26 @@ public class CreateMCQuestion extends Fragment{
                 if(count==3){
                     mcOption3.setVisibility(View.INVISIBLE);
                     mcText3.setVisibility(View.INVISIBLE);
+                    mcText3.setText("");
                     removeOpt.setVisibility(View.INVISIBLE);
                     count=2;
                 }
                 else if(count==4){
                     mcOption4.setVisibility(View.INVISIBLE);
                     mcText4.setVisibility(View.INVISIBLE);
+                    mcText4.setText("");
                     count=3;
                 }
                 else if(count==5){
                     mcOption5.setVisibility(View.INVISIBLE);
                     mcText5.setVisibility(View.INVISIBLE);
+                    mcText5.setText("");
                     count=4;
                 }
                 else if(count==6){
                     mcOption6.setVisibility(View.INVISIBLE);
                     mcText6.setVisibility(View.INVISIBLE);
+                    mcText6.setText("");
                     option.setVisibility(View.VISIBLE);
                     count=5;
                 }
