@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Questionare {
     public String name;
-    ArrayList<Question> questions;
+    public ArrayList<Question> questions;
     String firebase_id = "";
     public Answersheet asheet = new Answersheet();
 

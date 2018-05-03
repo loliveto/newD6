@@ -10,20 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c51b6783-e51a-41e8-8414-9e2ec2d34902" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/Questionare.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/Questionare.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,9 +67,12 @@
       <file leaf-file-name="Questionare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/Questionare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="-17">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="e#1295#1296#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,6 +97,12 @@
               <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5343#6699#0" expanded="false" />
+                <element signature="e#6698#6699#0" expanded="false" />
+                <marker date="1525384667873" expanded="false" signature="2867:2959" ph="(v) → {" />
+                <marker date="1525384667873" expanded="false" signature="4238:4253" ph="}" />
+                <marker date="1525384667873" expanded="false" signature="4291:4383" ph="(v) → {" />
+                <marker date="1525384667873" expanded="false" signature="5288:5303" ph="}" />
               </folding>
             </state>
           </provider>
@@ -128,6 +125,10 @@
               <caret line="164" column="29" lean-forward="false" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1525384667868" expanded="true" signature="5589:5873" ph="{...}" />
+                <marker date="1525384667868" expanded="true" signature="5919:6194" ph="{...}" />
+                <marker date="1525384667868" expanded="true" signature="6237:6522" ph="{...}" />
+                <marker date="1525384667868" expanded="true" signature="6578:6867" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -146,8 +147,8 @@
       <file leaf-file-name="CreateMCQuestion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="133" column="90" lean-forward="true" selection-start-line="133" selection-start-column="90" selection-end-line="133" selection-end-column="90" />
+            <state relative-caret-position="148">
+              <caret line="136" column="55" lean-forward="false" selection-start-line="136" selection-start-column="55" selection-end-line="136" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -2425,7 +2426,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525384620029" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525384708452" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2473,7 +2474,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525384620029" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525384708452" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2656,7 +2657,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525384620031" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525384708455" />
       </method>
     </configuration>
     <list size="1">
@@ -2847,6 +2848,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1525384667868" expanded="true" signature="5589:5873" ph="{...}" />
+            <marker date="1525384667868" expanded="true" signature="5919:6194" ph="{...}" />
+            <marker date="1525384667868" expanded="true" signature="6237:6522" ph="{...}" />
+            <marker date="1525384667868" expanded="true" signature="6578:6867" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -3108,9 +3113,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
           <caret line="51" column="64" lean-forward="true" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3171,6 +3174,12 @@
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5343#6699#0" expanded="false" />
+            <element signature="e#6698#6699#0" expanded="false" />
+            <marker date="1525384667873" expanded="false" signature="2867:2959" ph="(v) → {" />
+            <marker date="1525384667873" expanded="false" signature="4238:4253" ph="}" />
+            <marker date="1525384667873" expanded="false" signature="4291:4383" ph="(v) → {" />
+            <marker date="1525384667873" expanded="false" signature="5288:5303" ph="}" />
           </folding>
         </state>
       </provider>
@@ -3200,6 +3209,10 @@
           <caret line="164" column="29" lean-forward="false" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1525384667868" expanded="true" signature="5589:5873" ph="{...}" />
+            <marker date="1525384667868" expanded="true" signature="5919:6194" ph="{...}" />
+            <marker date="1525384667868" expanded="true" signature="6237:6522" ph="{...}" />
+            <marker date="1525384667868" expanded="true" signature="6578:6867" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -3230,16 +3243,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/Questionare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="-17">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#1295#1296#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="133" column="90" lean-forward="true" selection-start-line="133" selection-start-column="90" selection-end-line="133" selection-end-column="90" />
+        <state relative-caret-position="148">
+          <caret line="136" column="55" lean-forward="false" selection-start-line="136" selection-start-column="55" selection-end-line="136" selection-end-column="55" />
           <folding />
         </state>
       </provider>
