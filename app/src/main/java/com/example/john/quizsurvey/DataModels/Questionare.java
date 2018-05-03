@@ -51,6 +51,9 @@ public class Questionare {
         return questions.get(index);
     }
 
+    public int getSize(){
+        return questions.size();
+    }
     public void save()
     {
         if (firebase_id.equals("")) {

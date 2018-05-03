@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
     {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeQuestionare ql = TakeQuestionare.newInstance();
+        TakeQuestionare ql = TakeQuestionare.newInstance(q);
         transaction.replace(R.id.main_activity,ql);
         transaction.commit();
     }
