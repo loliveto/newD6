@@ -49,6 +49,7 @@ public class CreateShortQuestion extends Fragment {
                 ShortQuestion question = new ShortQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
                 questionare.asheet.addCorrectAnswer(answer.getText().toString());
+                question.setOption(answer.getText().toString());
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
             }
         });

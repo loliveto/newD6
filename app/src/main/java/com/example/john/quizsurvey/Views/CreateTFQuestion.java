@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.john.quizsurvey.DataModels.Question;
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.DataModels.TFQuestion;
 import com.example.john.quizsurvey.MainActivity;

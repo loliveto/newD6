@@ -68,6 +68,14 @@ public class CreateRankQuestion extends Fragment {
                 anslist.add(rank3.getText().toString());
                 anslist.add(rank2.getText().toString());
                 anslist.add(rank1.getText().toString());
+
+                question.setOption(rank1.getText().toString());
+                question.setOption(rank2.getText().toString());
+                question.setOption(rank3.getText().toString());
+                question.setOption(rank4.getText().toString());
+                question.setOption(rank5.getText().toString());
+                question.setOption(rank6.getText().toString());
+
                 for(String a:anslist){
                     if(a!="") {
                         ans = a + ", " + ans;

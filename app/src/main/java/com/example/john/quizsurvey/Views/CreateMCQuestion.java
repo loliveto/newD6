@@ -87,6 +87,13 @@ public class CreateMCQuestion extends Fragment{
                 }else if(mcOption6.isChecked()){
                     questionare.asheet.addCorrectAnswer(mcText6.getText().toString());
                 }
+                question.setOption(mcText1.getText().toString());
+                question.setOption(mcText2.getText().toString());
+                question.setOption(mcText3.getText().toString());
+                question.setOption(mcText4.getText().toString());
+                question.setOption(mcText5.getText().toString());
+                question.setOption(mcText6.getText().toString());
+
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
 
             }

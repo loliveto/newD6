@@ -85,6 +85,7 @@ public class CreateMatchQuestion extends Fragment{
                 int i = 0;
                 for(String a:match1list){
                     ans = ans + a + "-" + match2list.get(i) + ", ";
+                    question.setOption(a + "-" + match2list.get(i));
                     i++;
                 }
                 questionare.asheet.addCorrectAnswer(ans);
