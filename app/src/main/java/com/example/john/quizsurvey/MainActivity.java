@@ -69,6 +69,15 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    public void toCreateTF(Questionare q, Question qu)
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateTFQuestion tf = CreateTFQuestion.newInstance(q, qu);
+        transaction.replace(R.id.main_activity,tf);
+        transaction.commit();
+    }
+
     public void toCreateShort(Questionare q)
     {
         FragmentManager manager = getSupportFragmentManager();

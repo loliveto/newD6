@@ -21,6 +21,8 @@ import com.example.john.quizsurvey.R;
 public class CreateTFQuestion extends Fragment {
 
     Questionare questionare;
+    Question tfq;
+    static boolean isNew;
 
     public CreateTFQuestion() {
         // Required empty public constructor
@@ -29,6 +31,14 @@ public class CreateTFQuestion extends Fragment {
     public static CreateTFQuestion newInstance(Questionare q) {
         CreateTFQuestion fragment = new CreateTFQuestion();
         fragment.questionare = q;
+        isNew = true;
+        return fragment;
+    }
+    public static CreateTFQuestion newInstance(Questionare q, Question qu) {
+        CreateTFQuestion fragment = new CreateTFQuestion();
+        fragment.questionare = q;
+        fragment.tfq = qu;
+        isNew = false;
         return fragment;
     }
 
@@ -44,6 +54,9 @@ public class CreateTFQuestion extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_create_tfquestion, container, false);
 
         final EditText prompt = view.findViewById(R.id.TFQuestionPrompt);
+        if(!isNew) {
+            prompt.setText(tfq.prompt);
+        }
 
         Button submit = view.findViewById(R.id.submitTF);
         final RadioButton tbutton = view.findViewById(R.id.TrueButton);
@@ -52,12 +65,21 @@ public class CreateTFQuestion extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TFQuestion question = new TFQuestion(prompt.getText().toString());
-                questionare.addQuestion(question);
-                if(tbutton.isChecked()){
-                    questionare.asheet.addCorrectAnswer("True");
-                }else if(fbutton.isChecked()){
-                    questionare.asheet.addCorrectAnswer("False");
+                if(isNew) {
+                    TFQuestion question = new TFQuestion(prompt.getText().toString());
+                    questionare.addQuestion(question);
+                    if (tbutton.isChecked()) {
+                        questionare.asheet.addCorrectAnswer("True");
+                    }else if (fbutton.isChecked()) {
+                        questionare.asheet.addCorrectAnswer("False");
+                    }
+                }else{
+                    tfq.prompt = prompt.getText().toString();
+                    if (tbutton.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(tfq), "True");
+                    }else if (fbutton.isChecked()) {
+                        questionare.asheet.correctAnswers.set(questionare.questions.indexOf(tfq), "False");
+                    }
                 }
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
             }
