@@ -6,46 +6,40 @@
     android:layout_height="match_parent">
 
     <TableLayout
-        android:layout_width="381dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TableRow
-            android:layout_width="333dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
             <EditText
                 android:id="@+id/longprompt"
-                android:layout_width="178dp"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Prompt"
                 android:inputType="textPersonName" />
-
-            <Button
-                android:id="@+id/backbutton"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:text="Back" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" >
 
             <EditText
                 android:id="@+id/shortanswer"
-                android:layout_width="251dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Answer"
                 android:inputType="textPersonName" />
         </TableRow>
 
-        <TableRow android:layout_width="match_parent">
+        <TableRow>
 
             <Button
                 android:id="@+id/submitshort"
-                android:layout_width="313dp"
+                android:layout_width="373dp"
                 android:layout_height="wrap_content"
                 android:text="Submit" />
         </TableRow>

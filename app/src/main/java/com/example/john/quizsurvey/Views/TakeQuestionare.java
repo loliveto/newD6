@@ -1,24 +1,27 @@
 package com.example.john.quizsurvey.Views;
 
-        import android.app.Activity;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.support.v4.app.Fragment;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.AdapterView;
-        import android.widget.ArrayAdapter;
-        import android.widget.Button;
-        import android.widget.EditText;
-        import android.widget.ListView;
-        import android.widget.TextView;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 
-        import com.example.john.quizsurvey.DataModels.Questionare;
-        import com.example.john.quizsurvey.MainActivity;
-        import com.example.john.quizsurvey.R;
+import com.example.john.quizsurvey.DataModels.Questionare;
+import com.example.john.quizsurvey.MainActivity;
+import com.example.john.quizsurvey.R;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
+
 /**
  * Created by Caroline Squillante on 4/25/2018.
  */
@@ -66,12 +69,37 @@ public class TakeQuestionare extends Fragment {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).toMenu();
+                ((MainActivity) getActivity()).toMenu();
             }
         });
 
-
-       return view;
+        Button back = view.findViewById(R.id.go_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toTakeQuestionares();
+            }
+        });
+        Button start = view.findViewById(R.id.start);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (questionare.getQuestion(0).type.equals("MC")) {
+                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                } else if (questionare.getQuestion(0).type.equals("LQ")) {
+                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                } else if (questionare.getQuestion(0).type.equals("MA")) {
+                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                } else if (questionare.getQuestion(0).type.equals("RQ")) {
+                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                } else if (questionare.getQuestion(0).type.equals("SQ")) {
+                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                } else if (questionare.getQuestion(0).type.equals("TF")) {
+                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                }
+            }
+        });
+        return view;
     }
 
 }

@@ -63,6 +63,14 @@ public class CreateMatchQuestion extends Fragment{
         final EditText match61 = view.findViewById(R.id.match61);
         final EditText match62 = view.findViewById(R.id.match62);
 
+        final Button backbutton = view.findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+            }
+        });
+
         final Button submit = view.findViewById(R.id.submitmatch);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
