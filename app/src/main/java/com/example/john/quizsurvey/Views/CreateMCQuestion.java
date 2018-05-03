@@ -25,6 +25,7 @@ import com.example.john.quizsurvey.R;
 public class CreateMCQuestion extends Fragment{
 
     Questionare questionare;
+    int count = 2;
 
     public CreateMCQuestion() {
         // Required empty public constructor
@@ -51,6 +52,21 @@ public class CreateMCQuestion extends Fragment{
         final EditText prompt = view.findViewById(R.id.mcprompt);
         //final Snackbar mysnackbar = Snackbar.make(view, "Saved", Snackbar.LENGTH_SHORT);
 
+        final Button option = (Button) view.findViewById(R.id.addOption);
+        final Button removeOpt = view.findViewById(R.id.removeOption);
+        final RadioButton mcOption1 = view.findViewById(R.id.mcOption1);
+        final RadioButton mcOption2 = view.findViewById(R.id.mcOption2);
+        final RadioButton mcOption3 = view.findViewById(R.id.mcOption3);
+        final RadioButton mcOption4 = view.findViewById(R.id.mcOption4);
+        final RadioButton mcOption5 = view.findViewById(R.id.mcOption5);
+        final RadioButton mcOption6 = view.findViewById(R.id.mcOption6);
+        final EditText mcText1 = view.findViewById(R.id.mcText1);
+        final EditText mcText2 = view.findViewById(R.id.mcText2);
+        final EditText mcText3 = view.findViewById(R.id.mcText3);
+        final EditText mcText4 = view.findViewById(R.id.mcText4);
+        final EditText mcText5 = view.findViewById(R.id.mcText5);
+        final EditText mcText6 = view.findViewById(R.id.mcText6);
+
         final Button submit = view.findViewById(R.id.submitMC);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,21 +74,23 @@ public class CreateMCQuestion extends Fragment{
                // mysnackbar.show();
                 MCQuestion question = new MCQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
+                if(mcOption1.isChecked()){
+                    questionare.asheet.addCorrectAnswer(mcText1.getText().toString());
+                }else if(mcOption2.isChecked()){
+                    questionare.asheet.addCorrectAnswer(mcText2.getText().toString());
+                }else if(mcOption3.isChecked()){
+                    questionare.asheet.addCorrectAnswer(mcText3.getText().toString());
+                }else if(mcOption4.isChecked()){
+                    questionare.asheet.addCorrectAnswer(mcText4.getText().toString());
+                }else if(mcOption5.isChecked()){
+                    questionare.asheet.addCorrectAnswer(mcText5.getText().toString());
+                }else if(mcOption6.isChecked()){
+                    questionare.asheet.addCorrectAnswer(mcText6.getText().toString());
+                }
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
 
             }
         });
-
-        final Button option = (Button) view.findViewById(R.id.addOption);
-        final Button removeOpt = view.findViewById(R.id.removeOption);
-        final Button mcOption3 = view.findViewById(R.id.mcOption3);
-        final Button mcOption4 = view.findViewById(R.id.mcOption4);
-        final Button mcOption5 = view.findViewById(R.id.mcOption5);
-        final Button mcOption6 = view.findViewById(R.id.mcOption6);
-        final EditText mcText3 = view.findViewById(R.id.mcText3);
-        final EditText mcText4 = view.findViewById(R.id.mcText4);
-        final EditText mcText5 = view.findViewById(R.id.mcText5);
-        final EditText mcText6 = view.findViewById(R.id.mcText6);
 
         option.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,47 +149,47 @@ public class CreateMCQuestion extends Fragment{
         return view;
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-        final EditText mcText1 = view.findViewById(R.id.mcText1);
-        final EditText mcText2 = view.findViewById(R.id.mcText2);
-        final EditText mcText3 = view.findViewById(R.id.mcText3);
-        final EditText mcText4 = view.findViewById(R.id.mcText4);
-        final EditText mcText5 = view.findViewById(R.id.mcText5);
-        final EditText mcText6 = view.findViewById(R.id.mcText6);
+//    public void onRadioButtonClicked(View view) {
+//        // Is the button now checked?
+//        boolean checked = ((RadioButton) view).isChecked();
+//        final EditText mcText1 = view.findViewById(R.id.mcText1);
+//        final EditText mcText2 = view.findViewById(R.id.mcText2);
+//        final EditText mcText3 = view.findViewById(R.id.mcText3);
+//        final EditText mcText4 = view.findViewById(R.id.mcText4);
+//        final EditText mcText5 = view.findViewById(R.id.mcText5);
+//        final EditText mcText6 = view.findViewById(R.id.mcText6);
+//
+//
+//        // Check which radio button was clicked
+//        switch(view.getId()) {
+//            case R.id.mcOption1:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer(mcText1.getText().toString()); //get option 1 text
+//                break;
+//            case R.id.mcOption2:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer(mcText2.getText().toString()); //get option 2 text
+//                break;
+//            case R.id.mcOption3:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer(mcText3.getText().toString()); //get option 3 text
+//                break;
+//            case R.id.mcOption4:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer(mcText4.getText().toString()); //get option 4 text
+//                break;
+//            case R.id.mcOption5:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer(mcText5.getText().toString()); //get option 5 text
+//                break;
+//            case R.id.mcOption6:
+//                if (checked)
+//                    questionare.asheet.addCorrectAnswer(mcText6.getText().toString()); //get option 6 text
+//                break;
+//        }
+//    }
 
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.mcOption1:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer(mcText1.getText().toString()); //get option 1 text
-                break;
-            case R.id.mcOption2:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer(mcText2.getText().toString()); //get option 2 text
-                break;
-            case R.id.mcOption3:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer(mcText3.getText().toString()); //get option 3 text
-                break;
-            case R.id.mcOption4:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer(mcText4.getText().toString()); //get option 4 text
-                break;
-            case R.id.mcOption5:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer(mcText5.getText().toString()); //get option 5 text
-                break;
-            case R.id.mcOption6:
-                if (checked)
-                    questionare.asheet.addCorrectAnswer(mcText6.getText().toString()); //get option 6 text
-                break;
-        }
-    }
-
-    int count = 2;
 /**
     public void onButtonClicked(View view){
 
