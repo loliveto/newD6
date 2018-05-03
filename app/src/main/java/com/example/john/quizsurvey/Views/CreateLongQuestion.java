@@ -41,6 +41,15 @@ public class CreateLongQuestion extends Fragment{
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_create_long, container, false);
         final EditText prompt = view.findViewById(R.id.longprompt);
+
+        final Button backbutton = view.findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+            }
+        });
+
         Button submit = view.findViewById(R.id.submit);
 
         submit.setOnClickListener(new View.OnClickListener() {

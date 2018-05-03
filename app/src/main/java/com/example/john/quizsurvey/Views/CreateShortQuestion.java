@@ -41,6 +41,15 @@ public class CreateShortQuestion extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_create_short, container, false);
         final EditText prompt = view.findViewById(R.id.longprompt);
         final EditText answer = view.findViewById(R.id.shortanswer);
+
+        final Button backbutton = view.findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+            }
+        });
+
         Button submit = view.findViewById(R.id.submitshort);
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -58,3 +67,4 @@ public class CreateShortQuestion extends Fragment {
         return view;
     }
 }
+
