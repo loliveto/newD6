@@ -2,9 +2,12 @@ package com.example.john.quizsurvey.Views;
 
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +66,7 @@ public class EditQuestionare extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_quest, container, false);
         final EditText titleText = view.findViewById(R.id.questionare_title);
         titleText.setText(questionare.name);
+
         Button addQuestion = view.findViewById(R.id.add_question);
         addQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,15 +75,28 @@ public class EditQuestionare extends Fragment {
                 ((MainActivity)getActivity()).toSelectQType(questionare);
             }
         });
+
+
         Button save = view.findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 questionare.name = titleText.getText().toString();
+                AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                alertDialog.setTitle("Saved!");
+                alertDialog.setMessage("Your questionnaire has been saved!");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
                 questionare.save();
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
             }
         });
+
         Button home = view.findViewById(R.id.go_home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
