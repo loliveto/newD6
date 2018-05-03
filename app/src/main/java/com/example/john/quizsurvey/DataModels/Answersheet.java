@@ -9,7 +9,8 @@ import java.util.HashMap;
 
 public class Answersheet {
     public ArrayList<String> correctAnswers = new ArrayList<String>();
-    public HashMap<Integer, ArrayList<String>> userAnswers = new  HashMap<Integer, ArrayList<String>>();
+    public ArrayList<String> userList = new ArrayList<String>();
+    public HashMap<String, ArrayList<String>> userAnswers = new  HashMap<String, ArrayList<String>>();
     public int id;
 
 //    public AnswerSheet(){;
@@ -21,15 +22,15 @@ public class Answersheet {
     }
 
     //add user users for the questionaire
-    public void addUserAnswer(Integer uId, String answer) {
+    public void addUserAnswer(String name, String answer) {
         ArrayList<String> ans = new ArrayList<String>();
-        if(userAnswers.containsKey(id)) {
-            ans = userAnswers.get(id);
+        if(userAnswers.containsKey(name)) {
+            ans = userAnswers.get(name);
             ans.add(answer);
-            userAnswers.put(id, ans);
+            userAnswers.put(name, ans);
         }else{
             ans.add(answer);
-            userAnswers.put(id, ans);
+            userAnswers.put(name, ans);
         }
     }
 
@@ -43,7 +44,7 @@ public class Answersheet {
         return correctAnswers;
     }
 
-    public ArrayList<String> getUserAnswers(Integer id) {
-        return userAnswers.get(id);
+    public ArrayList<String> getUserAnswers(String name) {
+        return userAnswers.get(name);
     }
 }

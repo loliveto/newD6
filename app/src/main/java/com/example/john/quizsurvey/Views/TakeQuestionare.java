@@ -85,17 +85,17 @@ public class TakeQuestionare extends Fragment {
             @Override
             public void onClick(View v) {
                 if (questionare.getQuestion(0).type.equals("MC")) {
-                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                    ((MainActivity) getActivity()).toTakeMC(questionare, questionare.getQuestion(0));
                 } else if (questionare.getQuestion(0).type.equals("LQ")) {
-                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                    ((MainActivity) getActivity()).toTakeLQ(questionare, questionare.getQuestion(0));
                 } else if (questionare.getQuestion(0).type.equals("MA")) {
-                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                    ((MainActivity) getActivity()).toTakeMA(questionare, questionare.getQuestion(0));
                 } else if (questionare.getQuestion(0).type.equals("RQ")) {
-                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                    ((MainActivity) getActivity()).toTakeRQ(questionare, questionare.getQuestion(0));
                 } else if (questionare.getQuestion(0).type.equals("SQ")) {
-                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                    ((MainActivity) getActivity()).toTakeSQ(questionare, questionare.getQuestion(0));
                 } else if (questionare.getQuestion(0).type.equals("TF")) {
-                    ((MainActivity) getActivity()).toCreateMC(questionare, questionare.getQuestion(0));
+                    ((MainActivity) getActivity()).toTakeTF(questionare, questionare.getQuestion(0));
                 }
             }
         });
