@@ -104,6 +104,15 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    public void toCreateLong(Questionare q)
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateLongQuestion longq = CreateLongQuestion.newInstance(q);
+        transaction.replace(R.id.main_activity,longq);
+        transaction.commit();
+    }
+
     public void toViewQuestionares()
     {
         FragmentManager manager = getSupportFragmentManager();

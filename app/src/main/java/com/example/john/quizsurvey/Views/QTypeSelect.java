@@ -80,6 +80,14 @@ public class QTypeSelect extends Fragment{
             }
         });
 
+        Button longbutton = view.findViewById(R.id.longansbutton);
+        longbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toCreateLong(q);
+            }
+        });
+
         return view;
     }
 }

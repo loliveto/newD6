@@ -39,7 +39,7 @@ public class CreateShortQuestion extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_create_short, container, false);
-        final EditText prompt = view.findViewById(R.id.prompt);
+        final EditText prompt = view.findViewById(R.id.longprompt);
         final EditText answer = view.findViewById(R.id.shortanswer);
         Button submit = view.findViewById(R.id.submitshort);
 

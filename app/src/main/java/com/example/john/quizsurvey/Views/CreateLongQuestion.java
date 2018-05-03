@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.DataModels.LongQuestion;
 import com.example.john.quizsurvey.MainActivity;
 import com.example.john.quizsurvey.R;
@@ -41,8 +40,7 @@ public class CreateLongQuestion extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_create_long, container, false);
-        final EditText prompt = view.findViewById(R.id.prompt);
-       // final EditText answer = view.findViewById(R.id.shortanswer);
+        final EditText prompt = view.findViewById(R.id.longprompt);
         Button submit = view.findViewById(R.id.submit);
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +48,7 @@ public class CreateLongQuestion extends Fragment{
             public void onClick(View v) {
                 LongQuestion question = new LongQuestion(prompt.getText().toString());
                 questionare.addQuestion(question);
-                //questionare.asheet.addCorrectAnswer(answer.getText().toString());
+                questionare.asheet.addCorrectAnswer("");
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
             }
         });
