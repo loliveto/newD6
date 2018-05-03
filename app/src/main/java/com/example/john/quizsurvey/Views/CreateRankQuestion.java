@@ -56,6 +56,14 @@ public class CreateRankQuestion extends Fragment {
         final EditText rank5 = view.findViewById(R.id.rank5);
         final EditText rank6 = view.findViewById(R.id.rank6);
 
+        final Button backbutton = view.findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+            }
+        });
+
         final Button submit = view.findViewById(R.id.ranksubmit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,13 +8,14 @@
 
     <EditText
         android:id="@+id/matchprompt"
-        android:layout_width="354dp"
+        android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Prompt"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 
     <Button
         android:id="@+id/addmatch"
@@ -183,5 +184,16 @@
         android:text="Submit"
         app:layout_constraintStart_toStartOf="@+id/tableLayout2"
         app:layout_constraintTop_toTopOf="@+id/tableLayout2" />
+
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="62dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/matchprompt"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
