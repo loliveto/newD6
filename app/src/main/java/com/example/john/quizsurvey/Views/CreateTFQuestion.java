@@ -120,7 +120,7 @@ public class CreateTFQuestion extends Fragment {
                                     }
                                 });
                         alertDialog.show();
-                    }
+                }
                 else{
                     if(isNew){
                         TFQuestion question = new TFQuestion(prompt.getText().toString());

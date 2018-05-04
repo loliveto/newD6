@@ -127,42 +127,48 @@ public class CreateMCQuestion extends Fragment {
             public void onClick(View v) {
                 boolean optSelected = true;
                 MCQuestion question = new MCQuestion(prompt.getText().toString());
-                if (isNew) {
-                    questionare.addQuestion(question);
-                } else {
-                    mcq.prompt = prompt.getText().toString();
-                }
+//                if (isNew) {
+//                    questionare.addQuestion(question);
+//                } else {
+//                    mcq.prompt = prompt.getText().toString();
+//                }
 
                 if (isNew) {
-                    if (mcOption1.isChecked()) {
+                    if (mcOption1.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer(mcText1.getText().toString());
-                    } else if (mcOption2.isChecked()) {
+                    } else if (mcOption2.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer(mcText2.getText().toString());
-                    } else if (mcOption3.isChecked()) {
+                    } else if (mcOption3.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer(mcText3.getText().toString());
-                    } else if (mcOption4.isChecked()) {
+                    } else if (mcOption4.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer(mcText4.getText().toString());
-                    } else if (mcOption5.isChecked()) {
+                    } else if (mcOption5.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer(mcText5.getText().toString());
-                    } else if (mcOption6.isChecked()) {
+                    } else if (mcOption6.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer(mcText6.getText().toString());
+                    }
+                    else if(mcOption1.isChecked()||mcOption2.isChecked()||mcOption3.isChecked()||mcOption4.isChecked()||mcOption5.isChecked()||mcOption6.isChecked()){
+                        optSelected = true;
                     }
                     else{
                         optSelected = false;
                     }
                 } else {
-                    if (mcOption1.isChecked()) {
+                    if (mcOption1.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText1.getText().toString());
-                    } else if (mcOption2.isChecked()) {
+                    } else if (mcOption2.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText2.getText().toString());
-                    } else if (mcOption3.isChecked()) {
+                    } else if (mcOption3.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText3.getText().toString());
-                    } else if (mcOption4.isChecked()) {
+                    } else if (mcOption4.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText4.getText().toString());
-                    } else if (mcOption5.isChecked()) {
+                    } else if (mcOption5.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText5.getText().toString());
-                    } else if (mcOption6.isChecked()) {
+                    } else if (mcOption6.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText6.getText().toString());
+                    }
+                    else if(mcOption1.isChecked()||mcOption2.isChecked()||mcOption3.isChecked()||mcOption4.isChecked()||mcOption5.isChecked()||mcOption6.isChecked()){
+                        optSelected = true;
                     }
                     else{
                         optSelected = false;
@@ -198,7 +204,24 @@ public class CreateMCQuestion extends Fragment {
                             });
                     alertDialog.show();
                 }
+                else if(prompt.getText().toString().isEmpty()){
+                    AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                    alertDialog.setTitle("Error");
+                    alertDialog.setMessage("You must enter a prompt");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+                }
                 else{
+                    if (isNew) {
+                        questionare.addQuestion(question);
+                    } else {
+                        mcq.prompt = prompt.getText().toString();
+                    }
                     ((MainActivity) getActivity()).toSeeQuestionare(questionare);
 
                 }
