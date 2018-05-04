@@ -111,7 +111,6 @@ public class TakeRankQuestion extends Fragment {
                         ans = a + ", " + ans;
                     }
                 }
-                questionare.asheet.addCorrectAnswer(ans);
                 questionare.asheet.addUserAnswer(name, ans);
 
                 if (questionare.getSize() == qNum + 1) {

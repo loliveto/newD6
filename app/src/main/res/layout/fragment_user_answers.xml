@@ -63,12 +63,12 @@
 
             <ListView
                 android:id="@+id/question_list"
-                android:layout_width="match_parent"
+                android:layout_width="186dp"
                 android:layout_height="match_parent" />
 
             <ListView
                 android:id="@+id/viewanswers"
-                android:layout_width="match_parent"
+                android:layout_width="224dp"
                 android:layout_height="match_parent" />
         </TableRow>
 

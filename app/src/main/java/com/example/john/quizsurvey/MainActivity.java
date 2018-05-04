@@ -27,8 +27,11 @@ import com.example.john.quizsurvey.Views.TakeShortQuestion;
 import com.example.john.quizsurvey.Views.TakeTFQuestion;
 import com.example.john.quizsurvey.Views.TakeViewAllQuestionares;
 import com.example.john.quizsurvey.Views.TestSurveySelect;
+import com.example.john.quizsurvey.Views.ViewAllQuestForUser;
 import com.example.john.quizsurvey.Views.ViewAllQuestionares;
 import com.example.john.quizsurvey.Views.EditQuestionare;
+import com.example.john.quizsurvey.Views.ViewAllUsers;
+import com.example.john.quizsurvey.Views.ViewUserQuestions;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -255,6 +258,30 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         FinishQuestionare fq = FinishQuestionare.newInstance();
+        transaction.replace(R.id.main_activity,fq);
+        transaction.commit();
+    }
+
+    public void toViewAllQuestsForUser(){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        ViewAllQuestForUser fq = ViewAllQuestForUser.newInstance();
+        transaction.replace(R.id.main_activity,fq);
+        transaction.commit();
+    }
+
+    public void toViewQuestsForUser(){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        ViewUserQuestions fq = ViewUserQuestions.newInstance();
+        transaction.replace(R.id.main_activity,fq);
+        transaction.commit();
+    }
+
+    public void toViewUser(){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        ViewAllUsers fq = ViewUserQuestions.ViewAllUsers();
         transaction.replace(R.id.main_activity,fq);
         transaction.commit();
     }

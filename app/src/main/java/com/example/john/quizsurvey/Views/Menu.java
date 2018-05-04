@@ -61,6 +61,13 @@ public class Menu extends Fragment {
                 ((MainActivity)getActivity()).toTakeQuestionares();
             }
         });
+        Button Users = view.findViewById(R.id.button2);
+        takeQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toViewAllQuestsForUser();
+            }
+        });
         return view;
     }
 
