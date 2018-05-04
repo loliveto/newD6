@@ -62,6 +62,7 @@ public class TakeShortQuestion extends Fragment {
                 questionare.asheet.addUserAnswer(name, ans.getText().toString());
 
                 if (questionare.getSize() == qNum + 1) {
+                    questionare.save();
                     ((MainActivity) getActivity()).toFinish();
                 } else {
                     if (questionare.getQuestion(qNum + 1).type.equals("MC")) {
