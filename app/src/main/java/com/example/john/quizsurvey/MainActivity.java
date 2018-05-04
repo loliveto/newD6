@@ -95,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    public void toCreateShort(Questionare q, Question qu)
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateShortQuestion shortq = CreateShortQuestion.newInstance(q, qu);
+        transaction.replace(R.id.main_activity,shortq);
+        transaction.commit();
+    }
+
     public void toCreateRank(Questionare q)
     {
         FragmentManager manager = getSupportFragmentManager();

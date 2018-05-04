@@ -10,7 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c51b6783-e51a-41e8-8414-9e2ec2d34902" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateShortQuestion.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateShortQuestion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +52,7 @@
       <file leaf-file-name="QTypeSelect.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/QTypeSelect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="68">
               <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
               <folding />
             </state>
@@ -50,16 +62,16 @@
       <file leaf-file-name="EditQuestionare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="142" column="51" lean-forward="false" selection-start-line="142" selection-start-column="51" selection-end-line="142" selection-end-column="51" />
+            <state relative-caret-position="386">
+              <caret line="144" column="64" lean-forward="false" selection-start-line="144" selection-start-column="64" selection-end-line="144" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2603#2875#0" expanded="true" />
                 <element signature="e#2874#2875#0" expanded="true" />
                 <element signature="e#2971#3244#0" expanded="true" />
                 <element signature="e#3243#3244#0" expanded="true" />
-                <element signature="e#5263#6014#0" expanded="true" />
-                <element signature="e#6013#6014#0" expanded="true" />
+                <element signature="e#5263#6206#0" expanded="true" />
+                <element signature="e#6205#6206#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,47 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_view_quest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_view_quest.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Question.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/Question.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="53" lean-forward="false" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-              <folding>
-                <marker date="1525399469768" expanded="true" signature="650:1935" ph="{...}" />
-                <marker date="1525399469768" expanded="true" signature="1018:1929" ph="//..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="95" column="5" lean-forward="false" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/Menu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="284">
+              <caret line="93" column="45" lean-forward="false" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -124,7 +100,7 @@
       <file leaf-file-name="CreateMCQuestion.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="2686">
               <caret line="199" column="20" lean-forward="false" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="57" />
               <folding />
             </state>
@@ -134,11 +110,21 @@
       <file leaf-file-name="CreateTFQuestion.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateTFQuestion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="73" column="69" lean-forward="false" selection-start-line="73" selection-start-column="69" selection-end-line="73" selection-end-column="69" />
+            <state relative-caret-position="408">
+              <caret line="76" column="20" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateShortQuestion.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateShortQuestion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2152,15 +2138,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_create_long.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateLongQuestion.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/QTypeSelect.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateShortQuestion.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateRankQuestion.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMatchQuestion.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/Questionare.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateTFQuestion.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/Menu.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateShortQuestion.java" />
       </list>
     </option>
   </component>
@@ -2404,7 +2390,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525399540137" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525400676839" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2452,7 +2438,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525399540137" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525400676839" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2614,7 +2600,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525399540139" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525400676841" />
       </method>
     </configuration>
     <list size="1">
@@ -2751,8 +2737,8 @@
             <element signature="e#2874#2875#0" expanded="true" />
             <element signature="e#2971#3244#0" expanded="true" />
             <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#5263#6014#0" expanded="true" />
-            <element signature="e#6013#6014#0" expanded="true" />
+            <element signature="e#5263#6206#0" expanded="true" />
+            <element signature="e#6205#6206#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2815,8 +2801,8 @@
             <element signature="e#2874#2875#0" expanded="true" />
             <element signature="e#2971#3244#0" expanded="true" />
             <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#5263#6014#0" expanded="true" />
-            <element signature="e#6013#6014#0" expanded="true" />
+            <element signature="e#5263#6206#0" expanded="true" />
+            <element signature="e#6205#6206#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2932,13 +2918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/ShortQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/john/quizsurvey/R.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -3044,14 +3023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateShortQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="51" column="64" lean-forward="true" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/MCQuestion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -3091,29 +3062,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/QTypeSelect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/Answersheet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="599">
           <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateTFQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="73" column="69" lean-forward="false" selection-start-line="73" selection-start-column="69" selection-end-line="73" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3147,14 +3100,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="199" column="20" lean-forward="false" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_view_quest.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1105">
@@ -3166,22 +3111,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="142" column="51" lean-forward="false" selection-start-line="142" selection-start-column="51" selection-end-line="142" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2603#2875#0" expanded="true" />
-            <element signature="e#2874#2875#0" expanded="true" />
-            <element signature="e#2971#3244#0" expanded="true" />
-            <element signature="e#3243#3244#0" expanded="true" />
-            <element signature="e#5263#6014#0" expanded="true" />
-            <element signature="e#6013#6014#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -3190,10 +3119,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateMCQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2686">
+          <caret line="199" column="20" lean-forward="false" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/DataModels/ShortQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/EditQuestionare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="144" column="64" lean-forward="false" selection-start-line="144" selection-start-column="64" selection-end-line="144" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2603#2875#0" expanded="true" />
+            <element signature="e#2874#2875#0" expanded="true" />
+            <element signature="e#2971#3244#0" expanded="true" />
+            <element signature="e#3243#3244#0" expanded="true" />
+            <element signature="e#5263#6206#0" expanded="true" />
+            <element signature="e#6205#6206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/QTypeSelect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="95" column="5" lean-forward="false" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+        <state relative-caret-position="284">
+          <caret line="93" column="45" lean-forward="false" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateTFQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="76" column="20" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/john/quizsurvey/Views/CreateShortQuestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
           <folding />
         </state>
       </provider>

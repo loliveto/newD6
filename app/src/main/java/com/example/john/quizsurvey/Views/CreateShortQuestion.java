@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.john.quizsurvey.DataModels.Question;
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.DataModels.ShortQuestion;
 import com.example.john.quizsurvey.MainActivity;
@@ -19,6 +20,8 @@ import com.example.john.quizsurvey.R;
 
 public class CreateShortQuestion extends Fragment {
     Questionare questionare;
+    Question sq;
+    static boolean isNew;
 
     public CreateShortQuestion(){
     }
@@ -26,6 +29,15 @@ public class CreateShortQuestion extends Fragment {
     public static CreateShortQuestion newInstance(Questionare q) {
         CreateShortQuestion fragment = new CreateShortQuestion();
         fragment.questionare= q;
+        isNew = true;
+        return fragment;
+    }
+
+    public static CreateShortQuestion newInstance(Questionare q, Question qu) {
+        CreateShortQuestion fragment = new CreateShortQuestion();
+        fragment.questionare= q;
+        fragment.sq= qu;
+        isNew = false;
         return fragment;
     }
 
@@ -41,6 +53,10 @@ public class CreateShortQuestion extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_create_short, container, false);
         final EditText prompt = view.findViewById(R.id.longprompt);
         final EditText answer = view.findViewById(R.id.shortanswer);
+        if(!isNew) {
+            prompt.setText(sq.prompt);
+            answer.setText(sq.getOptions().get(0));
+        }
 
         final Button backbutton = view.findViewById(R.id.backbutton);
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -55,11 +71,16 @@ public class CreateShortQuestion extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ShortQuestion question = new ShortQuestion(prompt.getText().toString());
-                questionare.addQuestion(question);
-                questionare.asheet.addCorrectAnswer(answer.getText().toString());
-                question.setOption(answer.getText().toString());
-                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+                if(isNew) {
+                    ShortQuestion question = new ShortQuestion(prompt.getText().toString());
+                    questionare.addQuestion(question);
+                    questionare.asheet.addCorrectAnswer(answer.getText().toString());
+                    question.setOption(answer.getText().toString());
+                }else{
+                    sq.prompt = prompt.getText().toString();
+                    questionare.asheet.correctAnswers.set(questionare.questions.indexOf(sq), answer.getText().toString());
+                }
+                ((MainActivity) getActivity()).toSeeQuestionare(questionare);
             }
         });
 
