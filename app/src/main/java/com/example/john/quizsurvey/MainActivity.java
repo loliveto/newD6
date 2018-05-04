@@ -113,6 +113,15 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    public void toCreateRank(Questionare q, Question qu)
+    {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        CreateRankQuestion rankq = CreateRankQuestion.newInstance(q, qu);
+        transaction.replace(R.id.main_activity,rankq);
+        transaction.commit();
+    }
+
     public void toCreateMatch(Questionare q)
     {
         FragmentManager manager = getSupportFragmentManager();
