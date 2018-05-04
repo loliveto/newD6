@@ -62,7 +62,7 @@ public class Menu extends Fragment {
             }
         });
         Button Users = view.findViewById(R.id.button2);
-        takeQ.setOnClickListener(new View.OnClickListener() {
+        Users.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity)getActivity()).toViewAllQuestsForUser();

@@ -113,7 +113,7 @@ public class ViewAllQuestForUser extends Fragment {
                 //VERY IMPORTANT- App will eventually crash if listener not detached before leave fragment
                 ref.removeEventListener(listener);
                 Questionare selectedQuestionare = questionares.get(position);
-                ((MainActivity)getActivity()).toTakeQuestionare(selectedQuestionare);
+                ((MainActivity)getActivity()).toViewUsers(selectedQuestionare);
             }
         });
         return view;

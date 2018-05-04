@@ -270,18 +270,18 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void toViewQuestsForUser(){
+    public void toViewQuestsForUser(String name,Questionare q){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        ViewUserQuestions fq = ViewUserQuestions.newInstance();
+        ViewUserQuestions fq = ViewUserQuestions.newInstance(name, q);
         transaction.replace(R.id.main_activity,fq);
         transaction.commit();
     }
 
-    public void toViewUser(){
+    public void toViewUsers(Questionare q){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        ViewAllUsers fq = ViewUserQuestions.ViewAllUsers();
+        ViewAllUsers fq = ViewAllUsers.newInstance(q);
         transaction.replace(R.id.main_activity,fq);
         transaction.commit();
     }

@@ -5,12 +5,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class Questionare {
     public String name;
     public ArrayList<Question> questions;
     String firebase_id = "";
     public Answersheet asheet = new Answersheet();
+    public ArrayList<String> users = new ArrayList<String>();
 
     public boolean testsurvey;
 
@@ -28,6 +31,13 @@ public class Questionare {
     public void setIsATest(boolean isATest){
 
         testsurvey = isATest;
+    }
+
+    public ArrayList<String> getUsers() {
+
+       users.addAll(asheet.userAnswers.keySet());
+       return users;
+
     }
 
     public ArrayList<String> getQuestionPrompt() {
