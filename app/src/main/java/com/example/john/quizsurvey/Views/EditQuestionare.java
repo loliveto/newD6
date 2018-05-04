@@ -143,6 +143,8 @@ public class EditQuestionare extends Fragment {
                     ((MainActivity)getActivity()).toCreateTF(questionare, questionare.getQuestion(position));
                 }else if(questionare.getQuestion(position).type.equals("SQ")){
                     ((MainActivity)getActivity()).toCreateShort(questionare, questionare.getQuestion(position));
+                }else if(questionare.getQuestion(position).type.equals("RQ")){
+                    ((MainActivity)getActivity()).toCreateShort(questionare, questionare.getQuestion(position));
                 }
                 //trying
                 else {
