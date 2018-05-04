@@ -68,19 +68,19 @@ public class TakeTFQuestion extends Fragment {
                     questionare.asheet.addUserAnswer(name, "False");
                 }
                 if (questionare.getSize() == qNum + 1) {
-                    //((MainActivity) getActivity()).toFinish();
+                    ((MainActivity) getActivity()).toFinish();
                 } else {
                     if (questionare.getQuestion(qNum + 1).type.equals("MC")) {
                         ((MainActivity) getActivity()).toTakeMC(questionare, questionare.getQuestion(qNum + 1), name, qNum + 1);
-                    } else if (questionare.getQuestion(0).type.equals("LQ")) {
+                    } else if (questionare.getQuestion(qNum + 1).type.equals("LQ")) {
                         ((MainActivity) getActivity()).toTakeLQ(questionare, questionare.getQuestion(qNum + 1), name, qNum + 1);
-                    } else if (questionare.getQuestion(0).type.equals("MA")) {
+                    } else if (questionare.getQuestion(qNum + 1).type.equals("MA")) {
                         ((MainActivity) getActivity()).toTakeMA(questionare, questionare.getQuestion(qNum + 1), name, qNum + 1);
-                    } else if (questionare.getQuestion(0).type.equals("RQ")) {
+                    } else if (questionare.getQuestion(qNum + 1).type.equals("RQ")) {
                         ((MainActivity) getActivity()).toTakeRQ(questionare, questionare.getQuestion(qNum + 1), name, qNum + 1);
-                    } else if (questionare.getQuestion(0).type.equals("SQ")) {
+                    } else if (questionare.getQuestion(qNum + 1).type.equals("SQ")) {
                         ((MainActivity) getActivity()).toTakeSQ(questionare, questionare.getQuestion(qNum + 1), name, qNum + 1);
-                    } else if (questionare.getQuestion(0).type.equals("TF")) {
+                    } else if (questionare.getQuestion(qNum + 1).type.equals("TF")) {
                         ((MainActivity) getActivity()).toTakeTF(questionare, questionare.getQuestion(qNum + 1), name, qNum + 1);
                     }
 

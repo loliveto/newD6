@@ -35,9 +35,9 @@ public class FinishQuestionare extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_menu, container, false);
-        Button go_home = view.findViewById(R.id.createButton);
-        go_home.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_finish_quest, container, false);
+        Button home = view.findViewById(R.id.go_home);
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity)getActivity()).toMenu();

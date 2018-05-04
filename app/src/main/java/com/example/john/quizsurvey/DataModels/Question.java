@@ -21,6 +21,10 @@ public class Question {
         return this.options;
     }
 
+    public int numOptions(){
+        return options.size();
+    }
+
     public void save()
     {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
