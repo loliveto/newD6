@@ -6,34 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
+    <TextView
         android:id="@+id/matchprompt"
-        android:layout_width="354dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:ems="10"
-        android:hint="Prompt"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/addmatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:text="Add Option"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matchprompt" />
-
-    <Button
-        android:id="@+id/removematch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:text="Remove Option"
-        android:visibility="invisible"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matchprompt" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
@@ -49,140 +35,157 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
+            <TextView
                 android:id="@+id/match11"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="First Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="18sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/match12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="First Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="18sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
+            <TextView
                 android:id="@+id/match21"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Second Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="18sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/match22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Second Match"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="18sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
+            <TextView
                 android:id="@+id/match31"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Third Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
 
-            <EditText
+            <TextView
                 android:id="@+id/match32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Third Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
         </TableRow>
 
         <TableRow>
 
-            <EditText
+            <TextView
                 android:id="@+id/match41"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fourth Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
 
-            <EditText
+            <TextView
                 android:id="@+id/match42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fourth Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
         </TableRow>
 
         <TableRow>
 
-            <EditText
+            <TextView
                 android:id="@+id/match51"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fifth Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
 
-            <EditText
+            <TextView
                 android:id="@+id/match52"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Fifth Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
         </TableRow>
 
         <TableRow>
 
-            <EditText
+            <TextView
                 android:id="@+id/match61"
                 android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Sixth Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
 
-            <EditText
+            <TextView
                 android:id="@+id/match62"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Sixth Match"
                 android:inputType="textPersonName"
+                android:textSize="18sp"
                 android:visibility="invisible" />
         </TableRow>
 
     </TableLayout>
 
     <Button
-        android:id="@+id/submitmatch"
-        android:layout_width="350dp"
-        android:layout_height="0dp"
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="300dp"
-        android:text="Submit"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout2"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout2" />
+        android:layout_marginTop="8dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
 
 </android.support.constraint.ConstraintLayout>

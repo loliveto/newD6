@@ -93,17 +93,17 @@ public class TakeRankQuestion extends Fragment {
             ranktx6.setVisibility(View.VISIBLE);
         }
 
-        final Button submit = view.findViewById(R.id.submitMC);
+        final Button submit = view.findViewById(R.id.ranksubmit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                anslist.add(ranktx1.getText().toString());
-                anslist.add(ranktx2.getText().toString());
-                anslist.add(ranktx3.getText().toString());
-                anslist.add(ranktx4.getText().toString());
-                anslist.add(ranktx5.getText().toString());
                 anslist.add(ranktx6.getText().toString());
+                anslist.add(ranktx5.getText().toString());
+                anslist.add(ranktx4.getText().toString());
+                anslist.add(ranktx3.getText().toString());
+                anslist.add(ranktx2.getText().toString());
+                anslist.add(ranktx1.getText().toString());
 
                 String ans = "";
                 for(String a:anslist){
