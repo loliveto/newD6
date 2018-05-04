@@ -125,6 +125,7 @@ public class CreateMCQuestion extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean optSelected = true;
                 MCQuestion question = new MCQuestion(prompt.getText().toString());
                 if (isNew) {
                     questionare.addQuestion(question);
@@ -146,6 +147,9 @@ public class CreateMCQuestion extends Fragment {
                     } else if (mcOption6.isChecked()) {
                         questionare.asheet.addCorrectAnswer(mcText6.getText().toString());
                     }
+                    else{
+                        optSelected = false;
+                    }
                 } else {
                     if (mcOption1.isChecked()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText1.getText().toString());
@@ -159,6 +163,9 @@ public class CreateMCQuestion extends Fragment {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText5.getText().toString());
                     } else if (mcOption6.isChecked()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText6.getText().toString());
+                    }
+                    else{
+                        optSelected = false;
                     }
                 }
 
@@ -179,7 +186,22 @@ public class CreateMCQuestion extends Fragment {
                     question.setOption(mcText6.getText().toString());
                 }
 
-                ((MainActivity) getActivity()).toSeeQuestionare(questionare);
+                if(optSelected==false && questionare.isATest()==true){
+                    AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                    alertDialog.setTitle("Error");
+                    alertDialog.setMessage("You must select a correct answer");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+                }
+                else{
+                    ((MainActivity) getActivity()).toSeeQuestionare(questionare);
+
+                }
 
             }
         });
