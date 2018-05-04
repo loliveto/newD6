@@ -144,7 +144,7 @@ public class EditQuestionare extends Fragment {
                 }else if(questionare.getQuestion(position).type.equals("SQ")){
                     ((MainActivity)getActivity()).toCreateShort(questionare, questionare.getQuestion(position));
                 }else if(questionare.getQuestion(position).type.equals("RQ")){
-                    ((MainActivity)getActivity()).toCreateShort(questionare, questionare.getQuestion(position));
+                    ((MainActivity)getActivity()).toCreateRank(questionare, questionare.getQuestion(position));
                 }
                 //trying
                 else {
