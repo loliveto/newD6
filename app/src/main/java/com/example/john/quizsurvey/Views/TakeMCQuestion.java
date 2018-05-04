@@ -25,4 +25,5 @@ public class TakeMCQuestion extends Fragment {
         fragment.name = name;
         return fragment;
     }
+
 }

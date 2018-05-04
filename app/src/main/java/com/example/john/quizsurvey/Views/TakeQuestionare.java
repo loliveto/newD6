@@ -101,17 +101,17 @@ public class TakeQuestionare extends Fragment {
                     alertDialog.show();
                 }else {
                     if (questionare.getQuestion(0).type.equals("MC")) {
-                        ((MainActivity) getActivity()).toTakeMC(questionare, questionare.getQuestion(0),nameVar);
+                        ((MainActivity) getActivity()).toTakeMC(questionare, questionare.getQuestion(0),nameVar,0);
                     } else if (questionare.getQuestion(0).type.equals("LQ")) {
-                        ((MainActivity) getActivity()).toTakeLQ(questionare, questionare.getQuestion(0),nameVar);
+                        ((MainActivity) getActivity()).toTakeLQ(questionare, questionare.getQuestion(0),nameVar,0);
                     } else if (questionare.getQuestion(0).type.equals("MA")) {
-                        ((MainActivity) getActivity()).toTakeMA(questionare, questionare.getQuestion(0),nameVar);
+                        ((MainActivity) getActivity()).toTakeMA(questionare, questionare.getQuestion(0),nameVar,0);
                     } else if (questionare.getQuestion(0).type.equals("RQ")) {
-                        ((MainActivity) getActivity()).toTakeRQ(questionare, questionare.getQuestion(0),nameVar);
+                        ((MainActivity) getActivity()).toTakeRQ(questionare, questionare.getQuestion(0),nameVar,0);
                     } else if (questionare.getQuestion(0).type.equals("SQ")) {
-                        ((MainActivity) getActivity()).toTakeSQ(questionare, questionare.getQuestion(0),nameVar);
+                        ((MainActivity) getActivity()).toTakeSQ(questionare, questionare.getQuestion(0),nameVar,0);
                     } else if (questionare.getQuestion(0).type.equals("TF")) {
-                        ((MainActivity) getActivity()).toTakeTF(questionare, questionare.getQuestion(0),nameVar);
+                        ((MainActivity) getActivity()).toTakeTF(questionare, questionare.getQuestion(0),nameVar,0);
                     }
                 }
             }
