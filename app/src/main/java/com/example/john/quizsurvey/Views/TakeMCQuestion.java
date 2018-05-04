@@ -61,12 +61,12 @@ public class TakeMCQuestion extends Fragment {
         final RadioButton mcOption4 = view.findViewById(R.id.mcOption4);
         final RadioButton mcOption5 = view.findViewById(R.id.mcOption5);
         final RadioButton mcOption6 = view.findViewById(R.id.mcOption6);
-        final EditText mcText1 = view.findViewById(R.id.mcText1);
-        final EditText mcText2 = view.findViewById(R.id.mcText2);
-        final EditText mcText3 = view.findViewById(R.id.mcText3);
-        final EditText mcText4 = view.findViewById(R.id.mcText4);
-        final EditText mcText5 = view.findViewById(R.id.mcText5);
-        final EditText mcText6 = view.findViewById(R.id.mcText6);
+        final TextView mcText1 = view.findViewById(R.id.mcText1);
+        final TextView mcText2 = view.findViewById(R.id.mcText2);
+        final TextView mcText3 = view.findViewById(R.id.mcText3);
+        final TextView mcText4 = view.findViewById(R.id.mcText4);
+        final TextView mcText5 = view.findViewById(R.id.mcText5);
+        final TextView mcText6 = view.findViewById(R.id.mcText6);
 
 
             mcText1.setText(mcq.getOptions().get(0));
