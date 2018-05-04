@@ -12,7 +12,7 @@ public class Questionare {
     String firebase_id = "";
     public Answersheet asheet = new Answersheet();
 
-    boolean isATest;
+    public boolean testsurvey;
 
     public Questionare()
     {
@@ -21,8 +21,13 @@ public class Questionare {
         firebase_id = "";
     }
 
+    public boolean isATest(){
+        return testsurvey;
+    }
+
     public void setIsATest(boolean isATest){
-        this.isATest = isATest;
+
+        testsurvey = isATest;
     }
 
     public ArrayList<String> getQuestionPrompt() {
