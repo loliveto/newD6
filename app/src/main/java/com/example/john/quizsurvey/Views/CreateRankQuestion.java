@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.john.quizsurvey.DataModels.MCQuestion;
+import com.example.john.quizsurvey.DataModels.Question;
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.MainActivity;
 import com.example.john.quizsurvey.R;
@@ -21,9 +22,11 @@ import java.util.ArrayList;
 
 public class CreateRankQuestion extends Fragment {
     Questionare questionare;
+    Question rq;
     int count = 2;
     String ans = "";
     ArrayList<String> anslist = new ArrayList<>();
+    static boolean isNew;
 
     public CreateRankQuestion() {
         // Required empty public constructor
@@ -32,6 +35,14 @@ public class CreateRankQuestion extends Fragment {
     public static CreateRankQuestion newInstance(Questionare q) {
         CreateRankQuestion fragment = new CreateRankQuestion();
         fragment.questionare = q;
+        isNew = true;
+        return fragment;
+    }
+    public static CreateRankQuestion newInstance(Questionare q, Question qu) {
+        CreateRankQuestion fragment = new CreateRankQuestion();
+        fragment.questionare = q;
+        fragment.rq = qu;
+        isNew = false;
         return fragment;
     }
 
@@ -46,6 +57,9 @@ public class CreateRankQuestion extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_create_rank, container, false);
         final EditText prompt = view.findViewById(R.id.rankprompt);
+        if (!isNew) {
+            prompt.setText(rq.prompt);
+        }
 
         final Button option = (Button) view.findViewById(R.id.rankadd);
         final Button removeOpt = view.findViewById(R.id.rankremove);
@@ -55,6 +69,34 @@ public class CreateRankQuestion extends Fragment {
         final EditText rank4 = view.findViewById(R.id.rank4);
         final EditText rank5 = view.findViewById(R.id.rank5);
         final EditText rank6 = view.findViewById(R.id.rank6);
+
+        if (!isNew) {
+            rank1.setText(rq.getOptions().get(0));
+            rank2.setText(rq.getOptions().get(1));
+            rank3.setText(rq.getOptions().get(2));
+            if (!rq.getOptions().get(2).equals("")) {
+                rank3.setVisibility(View.VISIBLE);
+                removeOpt.setVisibility(View.VISIBLE);
+                count = 3;
+            }
+            rank4.setText(rq.getOptions().get(3));
+            if (!rq.getOptions().get(3).equals("")) {
+                rank4.setVisibility(View.VISIBLE);
+                count = 4;
+            }
+            rank5.setText(rq.getOptions().get(4));
+            if (!rq.getOptions().get(4).equals("")) {
+                rank5.setVisibility(View.VISIBLE);
+                rank5.setVisibility(View.VISIBLE);
+                count = 5;
+            }
+            rank6.setText(rq.getOptions().get(5));
+            if (!rq.getOptions().get(5).equals("")) {
+                rank6.setVisibility(View.VISIBLE);
+                option.setVisibility(View.INVISIBLE);
+                count = 6;
+            }
+        }
 
         final Button backbutton = view.findViewById(R.id.backbutton);
         backbutton.setOnClickListener(new View.OnClickListener() {

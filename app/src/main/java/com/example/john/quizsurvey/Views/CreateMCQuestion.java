@@ -24,7 +24,7 @@ import com.example.john.quizsurvey.R;
  * Created by Test on 4/18/2018.
  */
 
-public class CreateMCQuestion extends Fragment{
+public class CreateMCQuestion extends Fragment {
 
     Questionare questionare;
     Question mcq;
@@ -52,63 +52,63 @@ public class CreateMCQuestion extends Fragment{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-                    super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
 
-                }
+    }
 
-                @Override
-                public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                        Bundle savedInstanceState) {
-                    // Inflate the layout for this fragment
-                    View view =  inflater.inflate(R.layout.create_mcquestion, container, false);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.create_mcquestion, container, false);
 
-                    final EditText prompt = view.findViewById(R.id.mcprompt);
-                    if(!isNew) {
-                        prompt.setText(mcq.prompt);
-                    }
-                    final Button option = (Button) view.findViewById(R.id.addOption);
-                    final Button removeOpt = view.findViewById(R.id.removeOption);
-                    final RadioButton mcOption1 = view.findViewById(R.id.mcOption1);
-                    final RadioButton mcOption2 = view.findViewById(R.id.mcOption2);
-                    final RadioButton mcOption3 = view.findViewById(R.id.mcOption3);
-                    final RadioButton mcOption4 = view.findViewById(R.id.mcOption4);
-                    final RadioButton mcOption5 = view.findViewById(R.id.mcOption5);
-                    final RadioButton mcOption6 = view.findViewById(R.id.mcOption6);
-                    final EditText mcText1 = view.findViewById(R.id.mcText1);
-                    final EditText mcText2 = view.findViewById(R.id.mcText2);
-                    final EditText mcText3 = view.findViewById(R.id.mcText3);
-                    final EditText mcText4 = view.findViewById(R.id.mcText4);
-                    final EditText mcText5 = view.findViewById(R.id.mcText5);
-                    final EditText mcText6 = view.findViewById(R.id.mcText6);
+        final EditText prompt = view.findViewById(R.id.mcprompt);
+        if (!isNew) {
+            prompt.setText(mcq.prompt);
+        }
+        final Button option = (Button) view.findViewById(R.id.addOption);
+        final Button removeOpt = view.findViewById(R.id.removeOption);
+        final RadioButton mcOption1 = view.findViewById(R.id.mcOption1);
+        final RadioButton mcOption2 = view.findViewById(R.id.mcOption2);
+        final RadioButton mcOption3 = view.findViewById(R.id.mcOption3);
+        final RadioButton mcOption4 = view.findViewById(R.id.mcOption4);
+        final RadioButton mcOption5 = view.findViewById(R.id.mcOption5);
+        final RadioButton mcOption6 = view.findViewById(R.id.mcOption6);
+        final EditText mcText1 = view.findViewById(R.id.mcText1);
+        final EditText mcText2 = view.findViewById(R.id.mcText2);
+        final EditText mcText3 = view.findViewById(R.id.mcText3);
+        final EditText mcText4 = view.findViewById(R.id.mcText4);
+        final EditText mcText5 = view.findViewById(R.id.mcText5);
+        final EditText mcText6 = view.findViewById(R.id.mcText6);
 
-                    if(!isNew){
-                        mcText1.setText(mcq.getOptions().get(0));
-                        mcText2.setText(mcq.getOptions().get(1));
-                        mcText3.setText(mcq.getOptions().get(2));
-                        if(!mcq.getOptions().get(2).equals("")){
-                            mcOption3.setVisibility(View.VISIBLE);
-                            mcText3.setVisibility(View.VISIBLE);
-                            removeOpt.setVisibility(View.VISIBLE);
-                            count = 3;
-                        }
-                        mcText4.setText(mcq.getOptions().get(3));
-                        if(!mcq.getOptions().get(3).equals("")){
-                            mcOption4.setVisibility(View.VISIBLE);
-                            mcText4.setVisibility(View.VISIBLE);
-                            count = 4;
-                        }
-                        mcText5.setText(mcq.getOptions().get(4));
-                        if(!mcq.getOptions().get(4).equals("")){
-                            mcOption5.setVisibility(View.VISIBLE);
-                            mcText5.setVisibility(View.VISIBLE);
-                            count = 5;
-                        }
-                        mcText6.setText(mcq.getOptions().get(5));
-                        if(!mcq.getOptions().get(5).equals("")){
-                            mcOption6.setVisibility(View.VISIBLE);
-                            mcText6.setVisibility(View.VISIBLE);
-                            option.setVisibility(View.INVISIBLE);
-                            count = 6;
+        if (!isNew) {
+            mcText1.setText(mcq.getOptions().get(0));
+            mcText2.setText(mcq.getOptions().get(1));
+            mcText3.setText(mcq.getOptions().get(2));
+            if (!mcq.getOptions().get(2).equals("")) {
+                mcOption3.setVisibility(View.VISIBLE);
+                mcText3.setVisibility(View.VISIBLE);
+                removeOpt.setVisibility(View.VISIBLE);
+                count = 3;
+            }
+            mcText4.setText(mcq.getOptions().get(3));
+            if (!mcq.getOptions().get(3).equals("")) {
+                mcOption4.setVisibility(View.VISIBLE);
+                mcText4.setVisibility(View.VISIBLE);
+                count = 4;
+            }
+            mcText5.setText(mcq.getOptions().get(4));
+            if (!mcq.getOptions().get(4).equals("")) {
+                mcOption5.setVisibility(View.VISIBLE);
+                mcText5.setVisibility(View.VISIBLE);
+                count = 5;
+            }
+            mcText6.setText(mcq.getOptions().get(5));
+            if (!mcq.getOptions().get(5).equals("")) {
+                mcOption6.setVisibility(View.VISIBLE);
+                mcText6.setVisibility(View.VISIBLE);
+                option.setVisibility(View.INVISIBLE);
+                count = 6;
             }
         }
 
@@ -117,13 +117,13 @@ public class CreateMCQuestion extends Fragment{
             @Override
             public void onClick(View v) {
                 MCQuestion question = new MCQuestion(prompt.getText().toString());
-                if(isNew){
+                if (isNew) {
                     questionare.addQuestion(question);
-                }else{
+                } else {
                     mcq.prompt = prompt.getText().toString();
                 }
 
-                if(isNew) {
+                if (isNew) {
                     if (mcOption1.isChecked()) {
                         questionare.asheet.addCorrectAnswer(mcText1.getText().toString());
                     } else if (mcOption2.isChecked()) {
@@ -137,7 +137,7 @@ public class CreateMCQuestion extends Fragment{
                     } else if (mcOption6.isChecked()) {
                         questionare.asheet.addCorrectAnswer(mcText6.getText().toString());
                     }
-                }else{
+                } else {
                     if (mcOption1.isChecked()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mcq), mcText1.getText().toString());
                     } else if (mcOption2.isChecked()) {
@@ -153,7 +153,7 @@ public class CreateMCQuestion extends Fragment{
                     }
                 }
 
-                if(!isNew){
+                if (!isNew) {
                     mcq.options.clear();
                     mcq.setOption(mcText1.getText().toString());
                     mcq.setOption(mcText2.getText().toString());
@@ -161,7 +161,7 @@ public class CreateMCQuestion extends Fragment{
                     mcq.setOption(mcText4.getText().toString());
                     mcq.setOption(mcText5.getText().toString());
                     mcq.setOption(mcText6.getText().toString());
-                }else {
+                } else {
                     question.setOption(mcText1.getText().toString());
                     question.setOption(mcText2.getText().toString());
                     question.setOption(mcText3.getText().toString());
@@ -170,7 +170,7 @@ public class CreateMCQuestion extends Fragment{
                     question.setOption(mcText6.getText().toString());
                 }
 
-                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+                ((MainActivity) getActivity()).toSeeQuestionare(questionare);
 
             }
         });
@@ -178,58 +178,52 @@ public class CreateMCQuestion extends Fragment{
         option.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(count==2){
+                if (count == 2) {
                     mcOption3.setVisibility(View.VISIBLE);
                     mcText3.setVisibility(View.VISIBLE);
                     removeOpt.setVisibility(View.VISIBLE);
-                    count=3;
-                }
-                else if(count==3){
+                    count = 3;
+                } else if (count == 3) {
                     mcOption4.setVisibility(View.VISIBLE);
                     mcText4.setVisibility(View.VISIBLE);
-                    count=4;
-                }
-                else if(count==4){
+                    count = 4;
+                } else if (count == 4) {
                     mcOption5.setVisibility(View.VISIBLE);
                     mcText5.setVisibility(View.VISIBLE);
-                    count=5;
-                }
-                else if(count==5){
+                    count = 5;
+                } else if (count == 5) {
                     mcOption6.setVisibility(View.VISIBLE);
                     mcText6.setVisibility(View.VISIBLE);
                     option.setVisibility(View.INVISIBLE);
-                    count=6;
+                    count = 6;
                 }
             }
         });
         removeOpt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(count==3){
+                if (count == 3) {
                     mcOption3.setVisibility(View.INVISIBLE);
                     mcText3.setVisibility(View.INVISIBLE);
                     mcText3.setText("");
                     removeOpt.setVisibility(View.INVISIBLE);
-                    count=2;
-                }
-                else if(count==4){
+                    count = 2;
+                } else if (count == 4) {
                     mcOption4.setVisibility(View.INVISIBLE);
                     mcText4.setVisibility(View.INVISIBLE);
                     mcText4.setText("");
-                    count=3;
-                }
-                else if(count==5){
+                    count = 3;
+                } else if (count == 5) {
                     mcOption5.setVisibility(View.INVISIBLE);
                     mcText5.setVisibility(View.INVISIBLE);
                     mcText5.setText("");
-                    count=4;
-                }
-                else if(count==6){
+                    count = 4;
+                } else if (count == 6) {
                     mcOption6.setVisibility(View.INVISIBLE);
                     mcText6.setVisibility(View.INVISIBLE);
                     mcText6.setText("");
                     option.setVisibility(View.VISIBLE);
-                    count=5;
+                    count = 5;
                 }
             }
         });
@@ -278,76 +272,75 @@ public class CreateMCQuestion extends Fragment{
 
 
 /**
-    public void onButtonClicked(View view){
+ public void onButtonClicked(View view){
 
-        //onButtonClicked(View view);
-        /*
-        donebutton = (Button) findViewById(R.id.done);
-    donebutton.setOnClickListener(this);
-    donebutton.setVisibility(View.INVISIBLE);
+ //onButtonClicked(View view);
+ /*
+ donebutton = (Button) findViewById(R.id.done);
+ donebutton.setOnClickListener(this);
+ donebutton.setVisibility(View.INVISIBLE);
 
-    @Override
-     public void onClick(View v) {
-    // TODO Auto-generated method stub
-         if(v.equals(remove))
-           {
-             donebutton.setVisibility(View.VISIBLE);
-           }
-        if(v.equals(donebutton))
-            {
-                Intent i=new Intent(One.this,Second.class);
-                startActivity(i);
-                finish();
-                donebutton.setVisibility(View.INVISIBLE);
-            }
+ @Override public void onClick(View v) {
+ // TODO Auto-generated method stub
+ if(v.equals(remove))
+ {
+ donebutton.setVisibility(View.VISIBLE);
+ }
+ if(v.equals(donebutton))
+ {
+ Intent i=new Intent(One.this,Second.class);
+ startActivity(i);
+ finish();
+ donebutton.setVisibility(View.INVISIBLE);
+ }
 
-      }
+ }
 
-       // Button option = (Button) view.findViewById(R.id.addOption);
-        //final int count = 2;
-
-
-       // final EditText mcText1 = view.findViewById(R.id.mcText1);
-       // final EditText mcText2 = view.findViewById(R.id.mcText2);
+ // Button option = (Button) view.findViewById(R.id.addOption);
+ //final int count = 2;
 
 
-//        option.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-                 EditText mcText3 = view.findViewById(R.id.mcText3);
-                 EditText mcText4 = view.findViewById(R.id.mcText4);
-                 EditText mcText5 = view.findViewById(R.id.mcText5);
-                 EditText mcText6 = view.findViewById(R.id.mcText6);
-                 Button mcOption3 = view.findViewById(R.id.mcOption3);
-                Button mcOption4 = view.findViewById(R.id.mcOption4);
-                Button mcOption5 = view.findViewById(R.id.mcOption5);
-                Button mcOption6 = view.findViewById(R.id.mcOption6);
+ // final EditText mcText1 = view.findViewById(R.id.mcText1);
+ // final EditText mcText2 = view.findViewById(R.id.mcText2);
 
 
-                if (count == 2) {
-                    //final EditText mcText3 = view.findViewById(R.id.mcText3);
-                    mcText3.setVisibility(view.VISIBLE);
-                    mcOption3.setVisibility(view.VISIBLE);
-                    count = 3;
-                } else if (count == 3) {
-                    // final EditText mcText4 = view.findViewById(R.id.mcText4);
-                    mcText4.setVisibility(View.VISIBLE);
-                    mcOption4.setVisibility(View.VISIBLE);
+ //        option.setOnClickListener(new View.OnClickListener() {
+ //            public void onClick(View v) {
+ EditText mcText3 = view.findViewById(R.id.mcText3);
+ EditText mcText4 = view.findViewById(R.id.mcText4);
+ EditText mcText5 = view.findViewById(R.id.mcText5);
+ EditText mcText6 = view.findViewById(R.id.mcText6);
+ Button mcOption3 = view.findViewById(R.id.mcOption3);
+ Button mcOption4 = view.findViewById(R.id.mcOption4);
+ Button mcOption5 = view.findViewById(R.id.mcOption5);
+ Button mcOption6 = view.findViewById(R.id.mcOption6);
 
-                    count = 4;
-                } else if (count == 4) {
-                    // final EditText mcText5 = view.findViewById(R.id.mcText5);
-                    mcText5.setVisibility(View.VISIBLE);
-                    mcOption5.setVisibility(View.VISIBLE);
 
-                    count = 5;
-                } else if (count == 5) {
-                    //final EditText mcText6 = view.findViewById(R.id.mcText6);
-                    mcText6.setVisibility(View.VISIBLE);
-                    mcOption6.setVisibility(View.VISIBLE);
+ if (count == 2) {
+ //final EditText mcText3 = view.findViewById(R.id.mcText3);
+ mcText3.setVisibility(view.VISIBLE);
+ mcOption3.setVisibility(view.VISIBLE);
+ count = 3;
+ } else if (count == 3) {
+ // final EditText mcText4 = view.findViewById(R.id.mcText4);
+ mcText4.setVisibility(View.VISIBLE);
+ mcOption4.setVisibility(View.VISIBLE);
 
-                    count = 6;
-                }
-         //   }
-       // });
-    }*/
+ count = 4;
+ } else if (count == 4) {
+ // final EditText mcText5 = view.findViewById(R.id.mcText5);
+ mcText5.setVisibility(View.VISIBLE);
+ mcOption5.setVisibility(View.VISIBLE);
+
+ count = 5;
+ } else if (count == 5) {
+ //final EditText mcText6 = view.findViewById(R.id.mcText6);
+ mcText6.setVisibility(View.VISIBLE);
+ mcOption6.setVisibility(View.VISIBLE);
+
+ count = 6;
+ }
+ //   }
+ // });
+ }*/
 }
