@@ -230,14 +230,14 @@ public class MainActivity extends AppCompatActivity {
     public void toTakeMA(Questionare q, Question qu, String name, int qNum){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeMatchQuestion ma = TakeMatchQuestion.newInstance(q, qu, name);
+        TakeMatchQuestion ma = TakeMatchQuestion.newInstance(q, qu, name, qNum);
         transaction.replace(R.id.main_activity,ma);
         transaction.commit();
     }
     public void toTakeRQ(Questionare q, Question qu, String name, int qNum){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeRankQuestion rq = TakeRankQuestion.newInstance(q, qu, name);
+        TakeRankQuestion rq = TakeRankQuestion.newInstance(q, qu, name, qNum);
         transaction.replace(R.id.main_activity,rq);
         transaction.commit();
     }
