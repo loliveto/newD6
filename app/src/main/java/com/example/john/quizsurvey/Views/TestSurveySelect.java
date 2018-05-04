@@ -31,7 +31,7 @@ public class TestSurveySelect extends Fragment{
 
     public static TestSurveySelect newInstance() {
         TestSurveySelect fragment = new TestSurveySelect();
-        fragment.q = q;
+        //fragment.q = q;
         return fragment;
     }
 
@@ -52,7 +52,7 @@ public class TestSurveySelect extends Fragment{
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                q.setIsATest(true);
+               // q.setIsATest(true);
                 ((MainActivity)getActivity()).toSeeQuestionare();
             }
         });
