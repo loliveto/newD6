@@ -1,8 +1,10 @@
 package com.example.john.quizsurvey.Views;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,23 +67,70 @@ public class CreateTFQuestion extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean optSelected = true;
+
                 if(isNew) {
-                    TFQuestion question = new TFQuestion(prompt.getText().toString());
-                    questionare.addQuestion(question);
-                    if (tbutton.isChecked()) {
+//                    TFQuestion question = new TFQuestion(prompt.getText().toString());
+//                    questionare.addQuestion(question);
+                    if (tbutton.isChecked()&& !prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer("True");
-                    }else if (fbutton.isChecked()) {
+                    }else if (fbutton.isChecked()&&!prompt.getText().toString().isEmpty()) {
                         questionare.asheet.addCorrectAnswer("False");
+                    }
+                    else if(tbutton.isChecked() || fbutton.isChecked()){
+                        optSelected = true;
+                    }
+                    else{
+                        optSelected = false;
                     }
                 }else{
                     tfq.prompt = prompt.getText().toString();
-                    if (tbutton.isChecked()) {
+                    if (tbutton.isChecked()&&!prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(tfq), "True");
-                    }else if (fbutton.isChecked()) {
+                    }else if (fbutton.isChecked()&&!prompt.getText().toString().isEmpty()) {
                         questionare.asheet.correctAnswers.set(questionare.questions.indexOf(tfq), "False");
                     }
+                    else if(tbutton.isChecked() || fbutton.isChecked()){
+                        optSelected = true;
+                    }
+                    else{
+                        optSelected = false;
+                    }
                 }
-                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+                if(optSelected==false && questionare.isATest()==true){
+                    AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                    alertDialog.setTitle("Error");
+                    alertDialog.setMessage("You must select a correct answer");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
+                }
+                else if(prompt.getText().toString().isEmpty()){
+                        AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+                        alertDialog.setTitle("Error");
+                        alertDialog.setMessage("You must enter a prompt");
+                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+                    }
+                else{
+                    if(isNew){
+                        TFQuestion question = new TFQuestion(prompt.getText().toString());
+                        questionare.addQuestion(question);
+                    }
+                    ((MainActivity) getActivity()).toSeeQuestionare(questionare);
+
+                }
+
+
             }
         });
 

@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.MainActivity;
@@ -85,11 +86,20 @@ public class EditQuestionare extends Fragment {
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             questionare.setIsATest(false);
+
                             dialog.dismiss();
                         }
                     });
             alertDialog.show();
         }
+//        if(questionare.isATest()==true){
+//            TextView answertext = view.findViewById(R.id.answersText);
+//            answertext.setVisibility(View.VISIBLE);
+//        }
+//        else if(questionare.isATest()==false){
+//            TextView answertext = view.findViewById(R.id.answersText);
+//            answertext.setVisibility(View.INVISIBLE);
+//        }
 
         Button addQuestion = view.findViewById(R.id.add_question);
         addQuestion.setOnClickListener(new View.OnClickListener() {
