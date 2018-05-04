@@ -95,15 +95,6 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void toLongShort(Questionare q)
-    {
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        CreateLongQuestion longq = CreateLongQuestion.newInstance(q);
-        transaction.replace(R.id.main_activity,longq);
-        transaction.commit();
-    }
-
     public void toCreateRank(Questionare q)
     {
         FragmentManager manager = getSupportFragmentManager();
@@ -238,14 +229,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         FinishQuestionare fq = FinishQuestionare.newInstance();
         transaction.replace(R.id.main_activity,fq);
-        transaction.commit();
-    }
-
-    public void toTestorSurvey(){
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        TestSurveySelect ts = TestSurveySelect.newInstance();
-        transaction.replace(R.id.main_activity,ts);
         transaction.commit();
     }
 
