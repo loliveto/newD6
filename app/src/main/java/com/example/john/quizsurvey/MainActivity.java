@@ -207,14 +207,14 @@ public class MainActivity extends AppCompatActivity {
     public void toTakeLQ(Questionare q, Question qu, String name,int qNum){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeLongQuestion lq = TakeLongQuestion.newInstance(q, qu, name);
+        TakeLongQuestion lq = TakeLongQuestion.newInstance(q, qu, name, qNum);
         transaction.replace(R.id.main_activity,lq);
         transaction.commit();
     }
     public void toTakeSQ(Questionare q, Question qu, String name, int qNum){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeShortQuestion sq = TakeShortQuestion.newInstance(q, qu, name);
+        TakeShortQuestion sq = TakeShortQuestion.newInstance(q, qu, name, qNum);
         transaction.replace(R.id.main_activity,sq);
         transaction.commit();
     }
