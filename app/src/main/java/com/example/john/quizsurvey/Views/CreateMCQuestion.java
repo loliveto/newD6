@@ -66,6 +66,15 @@ public class CreateMCQuestion extends Fragment {
         if (!isNew) {
             prompt.setText(mcq.prompt);
         }
+
+        final Button backbutton = view.findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+            }
+        });
+
         final Button option = (Button) view.findViewById(R.id.addOption);
         final Button removeOpt = view.findViewById(R.id.removeOption);
         final RadioButton mcOption1 = view.findViewById(R.id.mcOption1);
