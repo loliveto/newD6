@@ -44,7 +44,7 @@ public class Menu extends Fragment {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity)getActivity()).toSeeQuestionare();
+                ((MainActivity)getActivity()).toTestorSurvey();
             }
         });
         Button editQ = view.findViewById(R.id.ViewQuest);

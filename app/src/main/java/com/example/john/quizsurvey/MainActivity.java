@@ -26,6 +26,7 @@ import com.example.john.quizsurvey.Views.TakeRankQuestion;
 import com.example.john.quizsurvey.Views.TakeShortQuestion;
 import com.example.john.quizsurvey.Views.TakeTFQuestion;
 import com.example.john.quizsurvey.Views.TakeViewAllQuestionares;
+import com.example.john.quizsurvey.Views.TestSurveySelect;
 import com.example.john.quizsurvey.Views.ViewAllQuestionares;
 import com.example.john.quizsurvey.Views.EditQuestionare;
 
@@ -237,6 +238,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
         FinishQuestionare fq = FinishQuestionare.newInstance();
         transaction.replace(R.id.main_activity,fq);
+        transaction.commit();
+    }
+
+    public void toTestorSurvey(){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        TestSurveySelect ts = TestSurveySelect.newInstance();
+        transaction.replace(R.id.main_activity,ts);
         transaction.commit();
     }
 
