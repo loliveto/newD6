@@ -43,6 +43,7 @@ public class CreateMatchQuestion extends Fragment{
     public static CreateMatchQuestion newInstance(Questionare q, Question qu) {
         CreateMatchQuestion fragment = new CreateMatchQuestion();
         fragment.questionare = q;
+        fragment.mq = qu;
         isNew = false;
         return fragment;
     }
@@ -91,41 +92,50 @@ public class CreateMatchQuestion extends Fragment{
             match11.setText(temp[0]);
             match12.setText(temp[1]);
 
-            temp = mq.getOptions().get(1).split("-");
-            match21.setText(temp[0]);
-            match22.setText(temp[1]);
+            String[] temp1;
+            temp1 = mq.getOptions().get(1).split("-");
+            match21.setText(temp1[0]);
+            match22.setText(temp1[1]);
 
-            temp = mq.getOptions().get(2).split("-");
-            match31.setText(temp[0]);
-            match32.setText(temp[1]);
+
             if (!mq.getOptions().get(2).equals("-")) {
+                String[] temp2;
+                temp2 = mq.getOptions().get(2).split("-");
+                match31.setText(temp2[0]);
+                match32.setText(temp2[1]);
                 match31.setVisibility(View.VISIBLE);
                 match32.setVisibility(View.VISIBLE);
                 removeOpt.setVisibility(View.VISIBLE);
                 count = 3;
             }
-            temp = mq.getOptions().get(3).split("-");
-            match41.setText(temp[0]);
-            match42.setText(temp[1]);
+
             if (!mq.getOptions().get(3).equals("-")) {
                 match41.setVisibility(View.VISIBLE);
                 match42.setVisibility(View.VISIBLE);
+                String[] temp3;
+                temp3 = mq.getOptions().get(3).split("-");
+                match41.setText(temp3[0]);
+                match42.setText(temp3[1]);
                 count = 4;
             }
-            temp = mq.getOptions().get(4).split("-");
-            match51.setText(temp[0]);
-            match52.setText(temp[1]);
+
             if (!mq.getOptions().get(4).equals("-")) {
                 match51.setVisibility(View.VISIBLE);
                 match52.setVisibility(View.VISIBLE);
+                String[] temp4;
+                temp4 = mq.getOptions().get(4).split("-");
+                match51.setText(temp4[0]);
+                match52.setText(temp4[1]);
                 count = 5;
             }
-            temp = mq.getOptions().get(5).split("-");
-            match61.setText(temp[0]);
-            match62.setText(temp[1]);
+
             if (!mq.getOptions().get(5).equals("-")) {
                 match61.setVisibility(View.VISIBLE);
                 match62.setVisibility(View.VISIBLE);
+                String[] temp5;
+                temp5 = mq.getOptions().get(5).split("-");
+                match61.setText(temp5[0]);
+                match62.setText(temp5[1]);
                 count = 6;
             }
         }
