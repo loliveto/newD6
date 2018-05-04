@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.john.quizsurvey.DataModels.MatchQuestion;
+import com.example.john.quizsurvey.DataModels.Question;
 import com.example.john.quizsurvey.DataModels.Questionare;
 import com.example.john.quizsurvey.MainActivity;
 import com.example.john.quizsurvey.R;
@@ -21,10 +22,12 @@ import java.util.ArrayList;
 
 public class CreateMatchQuestion extends Fragment{
     Questionare questionare;
+    Question mq;
     int count = 2;
     String ans = "";
     ArrayList<String> match1list = new ArrayList<>();
     ArrayList<String> match2list = new ArrayList<>();
+    static boolean isNew;
 
     public CreateMatchQuestion() {
         // Required empty public constructor
@@ -33,6 +36,14 @@ public class CreateMatchQuestion extends Fragment{
     public static CreateMatchQuestion newInstance(Questionare q) {
         CreateMatchQuestion fragment = new CreateMatchQuestion();
         fragment.questionare = q;
+        isNew = true;
+        return fragment;
+    }
+
+    public static CreateMatchQuestion newInstance(Questionare q, Question qu) {
+        CreateMatchQuestion fragment = new CreateMatchQuestion();
+        fragment.questionare = q;
+        isNew = false;
         return fragment;
     }
 
@@ -47,6 +58,9 @@ public class CreateMatchQuestion extends Fragment{
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_create_match, container, false);
         final EditText prompt = view.findViewById(R.id.matchprompt);
+        if (!isNew) {
+            prompt.setText(mq.prompt);
+        }
 
         final Button option = view.findViewById(R.id.addmatch);
         final Button removeOpt = view.findViewById(R.id.removematch);
@@ -71,24 +85,91 @@ public class CreateMatchQuestion extends Fragment{
             }
         });
 
+        if (!isNew) {
+            String[] temp;
+            temp = mq.getOptions().get(0).split("-");
+            match11.setText(temp[0]);
+            match12.setText(temp[1]);
+
+            temp = mq.getOptions().get(1).split("-");
+            match21.setText(temp[0]);
+            match22.setText(temp[1]);
+
+            temp = mq.getOptions().get(2).split("-");
+            match31.setText(temp[0]);
+            match32.setText(temp[1]);
+            if (!mq.getOptions().get(2).equals("-")) {
+                match31.setVisibility(View.VISIBLE);
+                match32.setVisibility(View.VISIBLE);
+                removeOpt.setVisibility(View.VISIBLE);
+                count = 3;
+            }
+            temp = mq.getOptions().get(3).split("-");
+            match41.setText(temp[0]);
+            match42.setText(temp[1]);
+            if (!mq.getOptions().get(3).equals("-")) {
+                match41.setVisibility(View.VISIBLE);
+                match42.setVisibility(View.VISIBLE);
+                count = 4;
+            }
+            temp = mq.getOptions().get(4).split("-");
+            match51.setText(temp[0]);
+            match52.setText(temp[1]);
+            if (!mq.getOptions().get(4).equals("-")) {
+                match51.setVisibility(View.VISIBLE);
+                match52.setVisibility(View.VISIBLE);
+                count = 5;
+            }
+            temp = mq.getOptions().get(5).split("-");
+            match61.setText(temp[0]);
+            match62.setText(temp[1]);
+            if (!mq.getOptions().get(5).equals("-")) {
+                match61.setVisibility(View.VISIBLE);
+                match62.setVisibility(View.VISIBLE);
+                count = 6;
+            }
+        }
+
         final Button submit = view.findViewById(R.id.submitmatch);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MatchQuestion question = new MatchQuestion(prompt.getText().toString());
-                questionare.addQuestion(question);
-                match1list.add(match11.getText().toString());
-                match1list.add(match21.getText().toString());
-                match1list.add(match31.getText().toString());
-                match1list.add(match41.getText().toString());
-                match1list.add(match51.getText().toString());
-                match1list.add(match61.getText().toString());
-                match2list.add(match12.getText().toString());
-                match2list.add(match22.getText().toString());
-                match2list.add(match32.getText().toString());
-                match2list.add(match42.getText().toString());
-                match2list.add(match52.getText().toString());
-                match2list.add(match62.getText().toString());
+                if(isNew) {
+                    questionare.addQuestion(question);
+                }else{
+                    mq.prompt = prompt.getText().toString();
+                }
+
+                if(isNew) {
+                    match1list.add(match11.getText().toString());
+                    match1list.add(match21.getText().toString());
+                    match1list.add(match31.getText().toString());
+                    match1list.add(match41.getText().toString());
+                    match1list.add(match51.getText().toString());
+                    match1list.add(match61.getText().toString());
+                    match2list.add(match12.getText().toString());
+                    match2list.add(match22.getText().toString());
+                    match2list.add(match32.getText().toString());
+                    match2list.add(match42.getText().toString());
+                    match2list.add(match52.getText().toString());
+                    match2list.add(match62.getText().toString());
+                }else{
+                    match1list.clear();
+                    match2list.clear();
+                    match1list.add(match11.getText().toString());
+                    match1list.add(match21.getText().toString());
+                    match1list.add(match31.getText().toString());
+                    match1list.add(match41.getText().toString());
+                    match1list.add(match51.getText().toString());
+                    match1list.add(match61.getText().toString());
+                    match2list.add(match12.getText().toString());
+                    match2list.add(match22.getText().toString());
+                    match2list.add(match32.getText().toString());
+                    match2list.add(match42.getText().toString());
+                    match2list.add(match52.getText().toString());
+                    match2list.add(match62.getText().toString());
+                }
 
                 int i = 0;
                 for(String a:match1list){
@@ -96,7 +177,11 @@ public class CreateMatchQuestion extends Fragment{
                     question.setOption(a + "-" + match2list.get(i));
                     i++;
                 }
-                questionare.asheet.addCorrectAnswer(ans);
+                if(isNew) {
+                    questionare.asheet.addCorrectAnswer(ans);
+                }else{
+                    questionare.asheet.correctAnswers.set(questionare.questions.indexOf(mq), ans);
+                }
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
 
             }

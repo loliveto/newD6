@@ -1,7 +1,9 @@
 package com.example.john.quizsurvey.Views;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.EditText;
 import com.example.john.quizsurvey.DataModels.MCQuestion;
 import com.example.john.quizsurvey.DataModels.Question;
 import com.example.john.quizsurvey.DataModels.Questionare;
+import com.example.john.quizsurvey.DataModels.RankQuestion;
 import com.example.john.quizsurvey.MainActivity;
 import com.example.john.quizsurvey.R;
 
@@ -110,28 +113,55 @@ public class CreateRankQuestion extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MCQuestion question = new MCQuestion(prompt.getText().toString());
-                questionare.addQuestion(question);
-                anslist.add(rank6.getText().toString());
-                anslist.add(rank5.getText().toString());
-                anslist.add(rank4.getText().toString());
-                anslist.add(rank3.getText().toString());
-                anslist.add(rank2.getText().toString());
-                anslist.add(rank1.getText().toString());
+                RankQuestion question = new RankQuestion(prompt.getText().toString());
+                if (isNew) {
+                    questionare.addQuestion(question);
+                } else {
+                    rq.prompt = prompt.getText().toString();
+                }
+                if (isNew) {
+                    anslist.add(rank6.getText().toString());
+                    anslist.add(rank5.getText().toString());
+                    anslist.add(rank4.getText().toString());
+                    anslist.add(rank3.getText().toString());
+                    anslist.add(rank2.getText().toString());
+                    anslist.add(rank1.getText().toString());
 
-                question.setOption(rank1.getText().toString());
-                question.setOption(rank2.getText().toString());
-                question.setOption(rank3.getText().toString());
-                question.setOption(rank4.getText().toString());
-                question.setOption(rank5.getText().toString());
-                question.setOption(rank6.getText().toString());
+                    question.setOption(rank1.getText().toString());
+                    question.setOption(rank2.getText().toString());
+                    question.setOption(rank3.getText().toString());
+                    question.setOption(rank4.getText().toString());
+                    question.setOption(rank5.getText().toString());
+                    question.setOption(rank6.getText().toString());
+                } else {
+                    anslist.clear();
+                    anslist.add(rank6.getText().toString());
+                    anslist.add(rank5.getText().toString());
+                    anslist.add(rank4.getText().toString());
+                    anslist.add(rank3.getText().toString());
+                    anslist.add(rank2.getText().toString());
+                    anslist.add(rank1.getText().toString());
+
+                    question.options.clear();
+                    question.setOption(rank1.getText().toString());
+                    question.setOption(rank2.getText().toString());
+                    question.setOption(rank3.getText().toString());
+                    question.setOption(rank4.getText().toString());
+                    question.setOption(rank5.getText().toString());
+                    question.setOption(rank6.getText().toString());
+                }
 
                 for(String a:anslist){
                     if(a!="") {
                         ans = a + ", " + ans;
                     }
                 }
-                questionare.asheet.addCorrectAnswer(ans);
+
+                if(isNew){
+                    questionare.asheet.addCorrectAnswer(ans);
+                }else {
+                    questionare.asheet.correctAnswers.set(questionare.questions.indexOf(rq), ans);
+                }
                 ((MainActivity)getActivity()).toSeeQuestionare(questionare);
 
             }
