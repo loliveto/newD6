@@ -50,9 +50,29 @@ public class ViewUserQuestions extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        ArrayList<String> userAns = questionare.asheet.getUserAnswers(name);
+        ArrayList<String> correctAns = questionare.asheet.getCorrectAnswers();
+        int score = 0;
+
+
+        for(int i = 0; i < userAns.size(); i++){
+            if(userAns.get(i).equals(correctAns.get(i))){
+                score ++;
+            }
+        }
+
+
+        score = (score / userAns.size()) * 100;
+
         final View view = inflater.inflate(R.layout.fragment_user_answers, container, false);
         final TextView titleText = view.findViewById(R.id.username);
-        titleText.setText(name);
+
+        if(questionare.isATest()) {
+            titleText.setText(name + "              Score: " + score + "%");
+        }else{
+            titleText.setText(name);
+        }
 
         Button home = view.findViewById(R.id.go_home);
         home.setOnClickListener(new View.OnClickListener() {
