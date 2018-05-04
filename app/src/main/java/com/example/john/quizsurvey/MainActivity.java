@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
     public void toTakeMC(Questionare q, Question qu, String name, int qNum){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        TakeMCQuestion mc = TakeMCQuestion.newInstance(q, qu, name);
+        TakeMCQuestion mc = TakeMCQuestion.newInstance(q, qu, name, qNum);
         transaction.replace(R.id.main_activity,mc);
         transaction.commit();
     }
