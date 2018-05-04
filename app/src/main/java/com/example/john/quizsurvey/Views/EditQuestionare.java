@@ -67,7 +67,7 @@ public class EditQuestionare extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_view_quest, container, false);
+        final View view = inflater.inflate(R.layout.fragment_view_quest, container, false);
         final EditText titleText = view.findViewById(R.id.questionare_title);
         titleText.setText(questionare.name);
 
@@ -80,6 +80,8 @@ public class EditQuestionare extends Fragment {
                         public void onClick(DialogInterface dialog, int which) {
                             questionare.setIsATest(true);
                             dialog.dismiss();
+                            TextView answertext = view.findViewById(R.id.answersText);
+                            answertext.setVisibility(View.VISIBLE);
                         }
                     });
             alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Survey",
