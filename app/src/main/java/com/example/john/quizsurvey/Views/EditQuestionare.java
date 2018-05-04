@@ -35,6 +35,7 @@ public class EditQuestionare extends Fragment {
 
     // TODO: Rename and change types of parameters
     private Questionare questionare;
+    static boolean isNew;
 
     public EditQuestionare() {
         // Required empty public constructor
@@ -44,6 +45,7 @@ public class EditQuestionare extends Fragment {
     public static EditQuestionare newInstance(Questionare questionare) {
         EditQuestionare fragment = new EditQuestionare();
         fragment.questionare = questionare;
+        isNew = false;
         return fragment;
     }
 
@@ -51,6 +53,7 @@ public class EditQuestionare extends Fragment {
         EditQuestionare fragment = new EditQuestionare();
         Questionare q = new Questionare();
         fragment.questionare = q;
+        isNew = true;
         return fragment;
     }
 
@@ -67,6 +70,27 @@ public class EditQuestionare extends Fragment {
         final EditText titleText = view.findViewById(R.id.questionare_title);
         titleText.setText(questionare.name);
 
+        if(isNew) {
+            AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+            alertDialog.setTitle("Create a Questionnaire");
+            alertDialog.setMessage("Would you like to create a test or a survey?");
+            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Test",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            questionare.setIsATest(true);
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Survey",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            questionare.setIsATest(false);
+                            dialog.dismiss();
+                        }
+                    });
+            alertDialog.show();
+        }
+
         Button addQuestion = view.findViewById(R.id.add_question);
         addQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +99,6 @@ public class EditQuestionare extends Fragment {
                 ((MainActivity)getActivity()).toSelectQType(questionare);
             }
         });
-
 
         Button save = view.findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +153,10 @@ public class EditQuestionare extends Fragment {
         ListView listView1 = view.findViewById(R.id.viewanswers);
         ArrayAdapter adapter1 = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,ans);
         listView1.setAdapter(adapter1);
+
+        if(!questionare.isATest()){
+            listView1.setVisibility(View.INVISIBLE);
+        }
 
         return view;
     }
