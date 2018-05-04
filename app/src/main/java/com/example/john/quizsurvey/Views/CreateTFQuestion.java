@@ -59,6 +59,13 @@ public class CreateTFQuestion extends Fragment {
         if(!isNew) {
             prompt.setText(tfq.prompt);
         }
+        final Button backbutton = view.findViewById(R.id.backbutton);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).toSeeQuestionare(questionare);
+            }
+        });
 
         Button submit = view.findViewById(R.id.submitTF);
         final RadioButton tbutton = view.findViewById(R.id.TrueButton);

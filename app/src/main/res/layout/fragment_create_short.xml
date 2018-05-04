@@ -34,18 +34,18 @@
 
             <EditText
                 android:id="@+id/shortanswer"
-                android:layout_width="251dp"
+                android:layout_width="303dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Answer"
                 android:inputType="textPersonName" />
         </TableRow>
 
-        <TableRow android:layout_width="match_parent">
+        <TableRow android:layout_width="370dp">
 
             <Button
                 android:id="@+id/submitshort"
-                android:layout_width="313dp"
+                android:layout_width="295dp"
                 android:layout_height="wrap_content"
                 android:text="Submit" />
         </TableRow>
